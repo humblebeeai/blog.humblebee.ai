@@ -2,26 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://blog.humblebee.ai/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://blog.humblebee.ai/release-notes/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://blog.humblebee.ai/blog/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://blog.humblebee.ai/blog/2025/06/25/my-first-post/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.humblebee.ai/blog/2025/11/08/one-tool-less-infrastructure/</loc>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.humblebee.ai/blog/archive/2025/11/</loc>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://blog.humblebee.ai/blog/archive/2025/06/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
+    </url>
+    <url>
+         <loc>https://blog.humblebee.ai/blog/category/tech-blog/</loc>
+         <lastmod>2025-11-08</lastmod>
     </url>
     <url>
          <loc>https://blog.humblebee.ai/blog/category/examples/</loc>
-         <lastmod>2025-08-24</lastmod>
+         <lastmod>2025-11-08</lastmod>
     </url>
 </urlset>
