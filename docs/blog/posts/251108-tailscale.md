@@ -12,7 +12,7 @@ tags:
   - Tailscale
 ---
 
-# One Tool, Less Infrastructure
+# Tailscale - One Tool, Less Infrastructure
 
 You have multiple devices like a laptop, a production server, maybe an edge server. Accessing your work devices from outside your network usually requires port forwarding, dynamic DNS services, or a VPN, this usually raises security concerns as setting those up requires your public IP to be exposed.
 
