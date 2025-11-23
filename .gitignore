@@ -510,3 +510,6 @@ version.py
 sample.py
 example.py
 test.py
+
+# Virtual environments
+myenv/
