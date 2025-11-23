@@ -1,7 +1,7 @@
 # Humblebee AI - Blog
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/humblebeeintel/docs.humblebee-blog/4.publish-docs.yml?logo=GitHub)](https://github.com/humblebeeintel/docs.humblebee-blog/actions/workflows/4.publish-docs.yml)
-[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/humblebeeintel/docs.humblebee-blog?logo=GitHub&color=blue)](https://github.com/humblebeeintel/docs.humblebee-blog/releases)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/humblebeeai/docs.humblebee-blog/4.publish-docs.yml?logo=GitHub)](https://github.com/humblebeeai/docs.humblebee-blog/actions/workflows/4.publish-docs.yml)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/humblebeeai/docs.humblebee-blog?logo=GitHub&color=blue)](https://github.com/humblebeeai/docs.humblebee-blog/releases)
 
 This repository is for "blog.humblebee.ai" technical blog.
 
@@ -45,20 +45,20 @@ cd ~/workspaces/projects
 **OPTION A.** Clone the repository:
 
 ```sh
-git clone https://github.com/humblebeeintel/docs.humblebee-blog.git && \
+git clone https://github.com/humblebeeai/docs.humblebee-blog.git && \
     cd docs.humblebee-blog
 ```
 
 **OPTION B.** Clone the repository (for **DEVELOPMENT**: git + ssh key):
 
 ```sh
-git clone git@github.com:humblebeeintel/docs.humblebee-blog.git && \
+git clone git@github.com:humblebeeai/docs.humblebee-blog.git && \
     cd docs.humblebee-blog
 ```
 
 **OPTION C.** Download source code:
 
-1. Download archived **zip** file from [**releases**](https://github.com/humblebeeintel/docs.humblebee-blog/releases).
+1. Download archived **zip** file from [**releases**](https://github.com/humblebeeai/docs.humblebee-blog/releases).
 2. Extract it into the projects directory.
 
 ### 3. 📦 Install dependencies

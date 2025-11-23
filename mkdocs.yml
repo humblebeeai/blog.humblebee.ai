@@ -1,8 +1,8 @@
 site_name: Humblebee AI - Blog
 site_description: 'This repository is for "blog.humblebee.ai" technical blog.'
 site_url: https://blog.humblebee.ai
-repo_name: humblebeeintel/docs.humblebee-blog
-repo_url: https://github.com/humblebeeintel/docs.humblebee-blog
+repo_name: humblebeeai/docs.humblebee-blog
+repo_url: https://github.com/humblebeeai/docs.humblebee-blog
 theme:
   name: material
   # name: readthedocs
@@ -10,8 +10,8 @@ theme:
   font:
     text: Roboto
     code: Roboto Mono
-  logo: assets/images/logo.png
-  favicon: assets/images/logo.png
+  logo: assets/images/logo.svg
+  favicon: assets/images/logo.svg
   icon:
     # logo: fontawesome/brands/python
     repo: fontawesome/brands/github
@@ -125,7 +125,7 @@ extra:
     provider: mike
   social:
     - icon: fontawesome/brands/github
-      link: https://github.com/humblebeeintel
+      link: https://github.com/humblebeeai
     - icon: fontawesome/brands/docker
       link: https://hub.docker.com/u/humblebeeai
     - icon: fontawesome/brands/python
