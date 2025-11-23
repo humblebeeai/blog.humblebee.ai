@@ -3,7 +3,7 @@ date:
   created: 2025-11-23T15:00:00+09:00
   updated: 2025-11-23T15:50:00+09:00
 authors:
-  - humoyunbek
+  - abdukarimovhm
 categories:
   - Tech Blog
 tags:
