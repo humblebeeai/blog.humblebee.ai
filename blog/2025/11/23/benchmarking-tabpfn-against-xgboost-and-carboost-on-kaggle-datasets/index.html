@@ -10,31 +10,29 @@
       
       
       
-        <link rel="canonical" href="https://blog.humblebee.ai/blog/archive/2025/11/">
+        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/23/benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets/">
       
       
-        <link rel="prev" href="../../../category/tech-blog/">
+        <link rel="prev" href="../../13/choosing-the-right-camera-for-cv-application/">
       
-      
-        <link rel="next" href="../../../../release-notes/">
       
       
         
       
       
-      <link rel="icon" href="../../../../assets/images/logo.svg">
+      <link rel="icon" href="../../../../../assets/images/logo.svg">
       <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.0">
     
     
       
-        <title>2025/11 - Humblebee AI - Blog</title>
+        <title>Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets - Humblebee AI - Blog</title>
       
     
     
-      <link rel="stylesheet" href="../../../../assets/stylesheets/main.618322db.min.css">
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/main.618322db.min.css">
       
         
-        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.ab4e12ef.min.css">
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/palette.ab4e12ef.min.css">
       
       
 
@@ -53,7 +51,7 @@
       
     
     
-    <script>__md_scope=new URL("../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#202511" class="md-skip">
+        <a href="#benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets" class="md-skip">
           Skip to content
         </a>
       
@@ -96,9 +94,9 @@
 
 <header class="md-header" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="../../../.." title="Humblebee AI - Blog" class="md-header__button md-logo" aria-label="Humblebee AI - Blog" data-md-component="logo">
+    <a href="../../../../.." title="Humblebee AI - Blog" class="md-header__button md-logo" aria-label="Humblebee AI - Blog" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../../../assets/images/logo.svg" alt="logo">
 
     </a>
     <label class="md-header__button md-icon" for="__drawer">
@@ -115,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              2025/11
+              Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets
             
           </span>
         </div>
@@ -242,7 +240,7 @@
     
     
       <li class="md-tabs__item md-tabs__item--active">
-        <a href="../../../" class="md-tabs__link">
+        <a href="../../../../" class="md-tabs__link">
           
   
   
@@ -262,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="../../../../release-notes/" class="md-tabs__link">
+      <a href="../../../../../release-notes/" class="md-tabs__link">
         
   
   
@@ -286,7 +284,9 @@
           
             
               
-              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" hidden>
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -297,9 +297,9 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="../../../.." title="Humblebee AI - Blog" class="md-nav__button md-logo" aria-label="Humblebee AI - Blog" data-md-component="logo">
+    <a href="../../../../.." title="Humblebee AI - Blog" class="md-nav__button md-logo" aria-label="Humblebee AI - Blog" data-md-component="logo">
       
-  <img src="../../../../assets/images/logo.svg" alt="logo">
+  <img src="../../../../../assets/images/logo.svg" alt="logo">
 
     </a>
     Humblebee AI - Blog
@@ -356,7 +356,7 @@
         
           
           <div class="md-nav__link md-nav__container">
-            <a href="../../../" class="md-nav__link ">
+            <a href="../../../../" class="md-nav__link ">
               
   
   
@@ -397,8 +397,6 @@
                 
   
   
-    
-  
   
   
     
@@ -413,11 +411,11 @@
       
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_1_2" >
         
           
           <label class="md-nav__link" for="__nav_1_2" id="__nav_1_2_label" tabindex="0">
@@ -438,7 +436,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_1_2_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_1_2">
             <span class="md-nav__icon md-icon"></span>
             
@@ -453,41 +451,12 @@
                 
   
   
-    
-  
   
     
-      
-    
   
   
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          
-  
-  
-  <span class="md-ellipsis">
-    
-  
-    2025/11
-  
-
-    
-  </span>
-  
-  
-
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../../../../archive/2025/11/" class="md-nav__link">
         
   
   
@@ -503,70 +472,6 @@
   
 
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#choosing-the-right-camera-for-cv-application" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Choosing the Right Camera for CV Application
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#livekit-one-platform-real-time-everything" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        LiveKit - One Platform, Real-Time Everything
-      
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#tailscale-one-tool-less-infrastructure" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        Tailscale - One Tool, Less Infrastructure
-      
-    </span>
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -643,7 +548,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../category/tech-blog/" class="md-nav__link">
+      <a href="../../../../category/tech-blog/" class="md-nav__link">
         
   
   
@@ -686,7 +591,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../../release-notes/" class="md-nav__link">
+      <a href="../../../../../release-notes/" class="md-nav__link">
         
   
   
@@ -714,6 +619,8 @@
             
             
               
+                
+              
               <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -733,10 +640,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets" class="md-nav__link">
+  <a href="#1-objective" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets
+        1. Objective
       
     </span>
   </a>
@@ -744,10 +651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#choosing-the-right-camera-for-cv-application" class="md-nav__link">
+  <a href="#2-datasets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Choosing the Right Camera for CV Application
+        2. Datasets
       
     </span>
   </a>
@@ -755,10 +662,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#livekit-one-platform-real-time-everything" class="md-nav__link">
+  <a href="#3-results" class="md-nav__link">
     <span class="md-ellipsis">
       
-        LiveKit - One Platform, Real-Time Everything
+        3. Results
       
     </span>
   </a>
@@ -766,10 +673,32 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#tailscale-one-tool-less-infrastructure" class="md-nav__link">
+  <a href="#4-observations" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Tailscale - One Tool, Less Infrastructure
+        4. Observations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-limitations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Limitations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Conclusion
       
     </span>
   </a>
@@ -785,222 +714,255 @@
             
           
           
-  <div class="md-content" data-md-component="content">
-    <div class="md-content__inner">
-      <header class="md-typeset">
-        <h1 id="202511">2025/11</h1>
-      </header>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/abdukarimovhm" alt="Abdukarimov Humoyunbek">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-11-23 15:00:00+09:00">Nov 23, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
+  <div class="md-content md-content--post" data-md-component="content">
+    <div class="md-sidebar md-sidebar--post" data-md-component="sidebar" data-md-type="navigation">
+      <div class="md-sidebar__scrollwrap">
+        <div class="md-sidebar__inner md-post">
+          <nav class="md-nav md-nav--primary">
+            <div class="md-post__back">
+              <div class="md-nav__title md-nav__container">
+                <a href="../../../../" class="md-nav__link">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+                  <span class="md-ellipsis">
+                    Back to index
+                  </span>
+                </a>
+              </div>
+            </div>
             
-              <a href="../../../category/tech-blog/" class="md-meta__link">Tech Blog</a></li>
-        
-        
+              <div class="md-post__authors md-typeset">
+                
+                  <div class="md-profile md-post__profile">
+                    <span class="md-author md-author--long">
+                      <img src="https://avatars.githubusercontent.com/abdukarimovhm" alt="Abdukarimov Humoyunbek">
+                    </span>
+                    <span class="md-profile__description">
+                      <strong>
+                        
+                          <a href="https://github.com/abdukarimovhm">Abdukarimov Humoyunbek</a>
+                        
+                      </strong>
+                      <br>
+                      Maintainer
+                    </span>
+                  </div>
+                
+              </div>
+            
+            <ul class="md-post__meta md-nav__list">
+              <li class="md-nav__item md-nav__item--section">
+                <div class="md-post__title">
+                  <span class="md-ellipsis">
+                    Metadata
+                  </span>
+                </div>
+                <nav class="md-nav">
+                  <ul class="md-nav__list">
+                    <li class="md-nav__item">
+                      <div class="md-nav__link">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
+                        <time datetime="2025-11-23 15:00:00+09:00" class="md-ellipsis">Nov 23, 2025</time>
+                      </div>
+                    </li>
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
+                          <time datetime="2025-11-23 15:50:00+09:00" class="md-ellipsis">Nov 23, 2025</time>
+                        </div>
+                      </li>
+                    
+                    
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9 3v15h3V3zm3 2 4 13 3-1-4-13zM5 5v13h3V5zM3 19v2h18v-2z"/></svg>
+                          <span class="md-ellipsis">
+                            in
+                            
+                              <a href="../../../../category/tech-blog/">Tech Blog</a></span>
+                        </div>
+                      </li>
+                    
+                    
+                      
+                      <li class="md-nav__item">
+                        <div class="md-nav__link">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
+                          <span class="md-ellipsis">
+                            
+                              3 min read
+                            
+                          </span>
+                        </div>
+                      </li>
+                    
+                  </ul>
+                </nav>
+              </li>
+            </ul>
+            
+          </nav>
           
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
+        </div>
+      </div>
     </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets"><a class="toclink" href="../../../2025/11/23/benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets/">Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets</a></h2>
-<p>This study benchmarks CatBoost, XGBoost, and TabPFN across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../2025/11/23/benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/inokov" alt="Oybek Inokov">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-11-13 15:00:00+09:00">Nov 13, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../category/tech-blog/" class="md-meta__link">Tech Blog</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              3 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="choosing-the-right-camera-for-cv-application"><a class="toclink" href="../../../2025/11/13/choosing-the-right-camera-for-cv-application/">Choosing the Right Camera for CV Application</a></h2>
-<p>When building a face recognition–based attendance system, the camera is not just an accessory — it's the foundation of your entire pipeline. Even the best recognition model can fail if the camera feed is noisy, blurred, or poorly lit. Choosing the right camera requires balancing image quality, cost, and computational performance.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../2025/11/13/choosing-the-right-camera-for-cv-application/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/akimovsarvar" alt="Akimov Sarvar">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-11-12 15:00:00+09:00">Nov 12, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../category/tech-blog/" class="md-meta__link">Tech Blog</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              5 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="livekit-one-platform-real-time-everything"><a class="toclink" href="../../../2025/11/12/livekit---one-platform-real-time-everything/">LiveKit - One Platform, Real-Time Everything</a></h2>
-<p>Video calls need one platform. Live streaming needs another. Voice AI agents need a third. Computer vision processing? That's a fourth vendor. Managing robots remotely? Good luck finding something that works.
-LiveKit replaces all of them. One SDK for voice agents, video streaming, vision AI, and robot control. Sub-100ms latency across the board.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../2025/11/12/livekit---one-platform-real-time-everything/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
-        <article class="md-post md-post--excerpt">
-  <header class="md-post__header">
-    
-      <nav class="md-post__authors md-typeset">
-        
-          <span class="md-author">
-            <img src="https://avatars.githubusercontent.com/BaratovSokhibjon" alt="Baratov Sokhibjon">
-          </span>
-        
-      </nav>
-    
-    <div class="md-post__meta md-meta">
-      <ul class="md-meta__list">
-        <li class="md-meta__item">
-          <time datetime="2025-11-08 15:00:00+09:00">Nov 8, 2025</time></li>
-        
-          <li class="md-meta__item">
-            in
-            
-              <a href="../../../category/tech-blog/" class="md-meta__link">Tech Blog</a></li>
-        
-        
-          
-          <li class="md-meta__item">
-            
-              4 min read
-            
-          </li>
-        
-        
-      </ul>
-      
-    </div>
-  </header>
-  <div class="md-post__content md-typeset">
-    <h2 id="tailscale-one-tool-less-infrastructure"><a class="toclink" href="../../../2025/11/08/tailscale---one-tool-less-infrastructure/">Tailscale - One Tool, Less Infrastructure</a></h2>
-<p>You have multiple devices like a laptop, a production server, maybe an edge server. Accessing your work devices from outside your network usually requires port forwarding, dynamic DNS services, or a VPN, this usually raises security concerns as setting those up requires your public IP to be exposed.</p>
-<p>Tailscale makes this simple. Install it on your devices and sign in. They can now reach each other securely from anywhere.</p>
-
-    
-      <nav class="md-post__action">
-        <a href="../../../2025/11/08/tailscale---one-tool-less-infrastructure/">
-          Continue reading
-        </a>
-      </nav>
-    
-    
-  </div>
-</article>
-      
+    <article class="md-content__inner md-typeset">
       
         
-          
-
-
-
-<nav class="md-pagination">
   
-</nav>
-        
+
+
+  <nav class="md-tags" >
+    
       
-    </div>
+      
+      
+      
+        <span class="md-tag">Benchmarking</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">CatBoost</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">TabPFN</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">Tabular Data</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">XGBoost</span>
+      
+    
+      
+      
+      
+      
+        <span class="md-tag">blog</span>
+      
+    
+  </nav>
+
+
+  
+  
+
+
+<h1 id="benchmarking-tabpfn-against-xgboost-and-carboost-on-kaggle-datasets">Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets</h1>
+<p>This study benchmarks CatBoost, XGBoost, and TabPFN across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.</p>
+<!-- more -->
+
+<h2 id="1-objective">1. Objective</h2>
+<p>The objective of this study is to benchmark the performance of three models — <strong>CatBoost</strong>,
+<strong>XGBoost</strong>, and <strong>TabPFN</strong> — across multiple Kaggle datasets. The aim is to evaluate how these
+models perform on diverse tasks including binary classification, regression, and time series
+forecasting. The focus is on comparing predictive accuracy, error metrics, and general
+applicability of TabPFN (a transformer-based model designed for tabular data) against
+well-established gradient boosting models.</p>
+<ul>
+<li><strong>Note:</strong> For comparison purposes, we did not perform feature engineering, missing
+  value handling, or extensive data cleaning. All models were trained on the raw
+  datasets to observe their out-of-the-box capabilities.</li>
+</ul>
+<hr />
+<h2 id="2-datasets">2. Datasets</h2>
+<p>The experiments were conducted on four Kaggle datasets covering different predictive modeling
+tasks. A summary of each dataset is provided below:</p>
+<p><img alt="Kaggle datasets" src="/assets/images/blog/kaggle-datasets.png" /></p>
+<hr />
+<h2 id="3-results">3. Results</h2>
+<p>The models were evaluated based on metrics appropriate to each task. For the <strong>House Prices</strong>
+dataset, RMSLE (Root Mean Squared Log Error) was used in accordance with Kaggle’s official
+evaluation method</p>
+<ul>
+<li><strong>Note:</strong> Due to TabPFN’s limitation of handling a maximum of 10,000 rows, for large
+  datasets (Sticker Sales), we performed random sampling of 10,000 entries and
+  further split them into training and validation sets. CatBoost and XGBoost were also
+  trained on the same sampled data to ensure a fair comparison.</li>
+</ul>
+<p><img alt="Kaggle datasets results" src="/assets/images/blog/kaggle-results.png" /></p>
+<hr />
+<h2 id="4-observations">4. Observations</h2>
+<ul>
+<li><strong>Titanic Dataset:</strong> TabPFN slightly outperformed CatBoost and XGBoost in terms of
+  accuracy, showing good performance on smaller classification tasks without feature
+  engineering.</li>
+<li><strong>House Prices:</strong> TabPFN achieved the lowest RMSLE, indicating strong generalization
+  ability for regression problems with log-transformed targets, even when trained on raw
+  data.</li>
+<li><strong>Rainfall Dataset:</strong> TabPFN achieved the highest AUC ROC, outperforming both boosting
+  models despite no additional data preprocessing or feature engineering.</li>
+<li><strong>Sticker Sales:</strong> XGBoost showed the best performance on time series forecasting.
+  TabPFN performed reasonably well, but its performance lagged</li>
+</ul>
+<hr />
+<h2 id="5-limitations">5. Limitations</h2>
+<p>During this benchmarking study, the following limitations were encountered:</p>
+<ul>
+<li><strong>TabPFN Row Limitations:</strong> TabPFN officially supports datasets with up to 10,000 rows.</li>
+<li><strong>Handling Large Datasets:</strong></li>
+<li>For the <strong>Sticker Sales dataset</strong> (230,130 samples), attempts to train on the full
+    dataset by ignoring the 10,000-row limit resulted in failures:<ul>
+<li>On GPU (3.8 GB VRAM), the training failed due to out-of-memory errors.</li>
+<li>On CPU, running TabPFN on the full dataset caused the kernel to crash.</li>
+</ul>
+</li>
+<li>Therefore, for <strong>Sticker Sales</strong>, we trained all models on a 10,000-entry random sample to
+ensure comparability.</li>
+</ul>
+<hr />
+<h2 id="6-conclusion">6. Conclusion</h2>
+<p>This benchmarking study demonstrates that <strong>TabPFN</strong>, trained on large-scale synthetic data and
+leveraging in-context learning, can outperform or match established models like CatBoost and
+XGBoost on small datasets with minimal preprocessing. Its ability to handle raw tabular data
+without requiring feature engineering makes it a powerful tool for quick experimentation and
+baseline modeling.</p>
+<p>However, significant limitations arise when working with larger datasets beyond 10,000 rows, as
+noted by the model’s creators. Attempts to run TabPFN on large datasets resulted in memory
+overloads and kernel crashes, making it impractical for large-scale training.</p>
+<p>In summary:</p>
+<ul>
+<li><strong>TabPFN is highly competitive or even superior on smaller datasets without preprocessing.</strong></li>
+<li><strong>It is not recommended for large datasets</strong> due to its scalability limitations and resource
+  consumption issues.</li>
+<li><strong>In domain-specific or structured time series forecasting tasks, models like XGBoost still outperform TabPFN.</strong></li>
+<li>Future improvements in scaling TabPFN and adapting it for specialized tasks could make
+  it a strong candidate for broader practical use.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+  
+
+
+
+      
+    </article>
   </div>
 
           
@@ -1019,10 +981,12 @@ LiveKit replaces all of them. One SDK for voice agents, video streaming, vision 
   
     
       
+        
+      
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../../category/tech-blog/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Tech Blog">
+          <a href="../../13/choosing-the-right-camera-for-cv-application/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Choosing the Right Camera for CV Application">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1032,27 +996,11 @@ LiveKit replaces all of them. One SDK for voice agents, video streaming, vision 
                 Previous
               </span>
               <div class="md-ellipsis">
-                Tech Blog
+                Choosing the Right Camera for CV Application
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../../../release-notes/" class="md-footer__link md-footer__link--next" aria-label="Next: Release Notes">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                Release Notes
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
@@ -1157,14 +1105,14 @@ LiveKit replaces all of them. One SDK for voice agents, video streaming, vision 
     
       
       
-      <script id="__config" type="application/json">{"annotate": null, "base": "../../../..", "features": ["navigation.indexes", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../../../..", "features": ["navigation.indexes", "navigation.tracking", "navigation.tabs", "navigation.top", "navigation.footer", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate"], "search": "../../../../../assets/javascripts/workers/search.7a47a382.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": {"provider": "mike"}}</script>
     
     
-      <script src="../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
+      <script src="../../../../../assets/javascripts/bundle.e71a0d61.min.js"></script>
       
-        <script src="../../../../assets/js/mathjax.js"></script>
+        <script src="../../../../../assets/js/mathjax.js"></script>
       
-        <script src="../../../../assets/js/tex-mml-chtml.js"></script>
+        <script src="../../../../../assets/js/tex-mml-chtml.js"></script>
       
     
   </body>
