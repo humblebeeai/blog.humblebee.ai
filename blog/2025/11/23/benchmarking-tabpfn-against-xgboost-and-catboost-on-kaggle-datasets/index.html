@@ -790,7 +790,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              3 min read
+                              4 min read
                             
                           </span>
                         </div>
@@ -883,8 +883,52 @@ well-established gradient boosting models.</p>
 <h2 id="2-datasets">2. Datasets</h2>
 <p>The experiments were conducted on four Kaggle datasets covering different predictive modeling
 tasks. A summary of each dataset is provided below:</p>
-<p><img alt="Kaggle datasets" src="/assets/images/blog/kaggle-datasets.png" /></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Dataset Name</th>
+<th>Task Type</th>
+<th>Target Variable</th>
+<th>Number of Samples</th>
+<th>Number of Features</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titanic - Machine Learning from Disaster</strong></td>
+<td>Binary Classification</td>
+<td>Survived (0/1)</td>
+<td>891 (train set)</td>
+<td>11 (after cleaning)</td>
+<td>Predict passenger survival</td>
+</tr>
+<tr>
+<td><strong>House Prices - Advanced Regression Techniques</strong></td>
+<td>Regression</td>
+<td>SalePrice</td>
+<td>1,460</td>
+<td>79</td>
+<td>Predict house sale prices</td>
+</tr>
+<tr>
+<td><strong>Binary Prediction with a Rainfall Dataset</strong></td>
+<td>Binary Classification</td>
+<td>RainTomorrow (Yes/No)</td>
+<td>2,190</td>
+<td>12</td>
+<td>Predict if it will rain tomorrow</td>
+</tr>
+<tr>
+<td><strong>Forecasting Sticker Sales</strong></td>
+<td>Time Series Forecasting</td>
+<td>num_sold</td>
+<td>230,130</td>
+<td>5 (date, country, store, product, id)</td>
+<td>Predict sticker sales; missing values present in num_sold</td>
+</tr>
+</tbody>
+</table>
 <h2 id="3-results">3. Results</h2>
 <p>The models were evaluated based on metrics appropriate to each task. For the <strong>House Prices</strong>
 dataset, RMSLE (Root Mean Squared Log Error) was used in accordance with Kaggle’s official
@@ -895,8 +939,52 @@ evaluation method</p>
   further split them into training and validation sets. CatBoost and XGBoost were also
   trained on the same sampled data to ensure a fair comparison.</li>
 </ul>
-<p><img alt="Kaggle datasets results" src="/assets/images/blog/kaggle-results.png" /></p>
-<hr />
+<table>
+<thead>
+<tr>
+<th>Dataset Name</th>
+<th>Metric</th>
+<th>CatBoost</th>
+<th>XGBoost</th>
+<th>TabPFN</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Titanic - Machine Learning from Disaster</strong></td>
+<td>Accuracy</td>
+<td>0.77511</td>
+<td>0.73584</td>
+<td>0.78947</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>House Prices - Advanced Regression Techniques</strong></td>
+<td>RMSLE (Root Mean Squared Log Error)</td>
+<td>0.1283</td>
+<td>0.15554</td>
+<td>0.11359</td>
+<td>Evaluated on log(predictions)vslog(actual) as per Kaggle</td>
+</tr>
+<tr>
+<td><strong>Binary Prediction with a Rainfall Dataset</strong></td>
+<td>AUC ROC</td>
+<td>0.84231</td>
+<td>0.8458</td>
+<td>0.86564</td>
+<td></td>
+</tr>
+<tr>
+<td><strong>Forecasting Sticker Sales</strong></td>
+<td>RMSE</td>
+<td>102.08</td>
+<td>89.56</td>
+<td>99.24</td>
+<td>All models were trained on a sampled dataset of 10,000 entries.</td>
+</tr>
+</tbody>
+</table>
 <h2 id="4-observations">4. Observations</h2>
 <ul>
 <li><strong>Titanic Dataset:</strong> TabPFN slightly outperformed CatBoost and XGBoost in terms of
