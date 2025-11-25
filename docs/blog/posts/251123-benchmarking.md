@@ -13,7 +13,7 @@ tags:
   - CatBoost
   - Tabular Data
 ---
-# Benchmarking TabPFN against XGboost and Carboost on Kaggle datasets
+# Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets
 
 This study benchmarks CatBoost, XGBoost, and TabPFN across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.
 
@@ -39,9 +39,13 @@ well-established gradient boosting models.
 The experiments were conducted on four Kaggle datasets covering different predictive modeling
 tasks. A summary of each dataset is provided below:
 
-![Kaggle datasets](/assets/images/blog/kaggle-datasets.png)
+| Dataset Name | Task Type | Target Variable | Number of Samples | Number of Features | Notes |
+|---|---|---|---|---|---|
+| **Titanic - Machine Learning from Disaster** | Binary Classification | Survived (0/1) | 891 (train set) | 11 (after cleaning) | Predict passenger survival |
+| **House Prices - Advanced Regression Techniques** | Regression | SalePrice | 1,460 | 79 | Predict house sale prices |
+| **Binary Prediction with a Rainfall Dataset** | Binary Classification | RainTomorrow (Yes/No) | 2,190 | 12 | Predict if it will rain tomorrow |
+| **Forecasting Sticker Sales** | Time Series Forecasting | num_sold | 230,130 | 5 (date, country, store, product, id) | Predict sticker sales; missing values present in num_sold |
 
----
 
 ## 3. Results
 
@@ -54,9 +58,13 @@ evaluation method
   further split them into training and validation sets. CatBoost and XGBoost were also
   trained on the same sampled data to ensure a fair comparison.
 
-![Kaggle datasets results](/assets/images/blog/kaggle-results.png)
+| Dataset Name | Metric | CatBoost | XGBoost | TabPFN | Notes |
+|---|---|---|---|---|---|
+| **Titanic - Machine Learning from Disaster** | Accuracy | 0.77511 | 0.73584 | 0.78947 | |
+| **House Prices - Advanced Regression Techniques** | RMSLE (Root Mean Squared Log Error) | 0.1283 | 0.15554 | 0.11359 | Evaluated on log(predictions)vslog(actual) as per Kaggle |
+| **Binary Prediction with a Rainfall Dataset** | AUC ROC | 0.84231 | 0.8458 | 0.86564 | |
+| **Forecasting Sticker Sales** | RMSE | 102.08 | 89.56 | 99.24 | All models were trained on a sampled dataset of 10,000 entries. |
 
----
 
 ## 4. Observations
 
