@@ -10,13 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/23/benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets/">
+        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/29/the-state-of-uzbek-data-for-ai/">
       
       
-        <link rel="prev" href="../../13/choosing-the-right-camera-for-cv-application/">
+        <link rel="prev" href="../../23/benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets/">
       
-      
-        <link rel="next" href="../../29/the-state-of-uzbek-data-for-ai/">
       
       
         
@@ -27,7 +25,7 @@
     
     
       
-        <title>Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets - Humblebee AI - Blog</title>
+        <title>The State of Uzbek Data for AI - Humblebee AI - Blog</title>
       
     
     
@@ -78,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets" class="md-skip">
+        <a href="#the-state-of-uzbek-data-for-ai" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets
+              The State of Uzbek Data for AI
             
           </span>
         </div>
@@ -642,10 +640,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#1-objective" class="md-nav__link">
+  <a href="#1-introduction" class="md-nav__link">
     <span class="md-ellipsis">
       
-        1. Objective
+        1. Introduction
       
     </span>
   </a>
@@ -653,10 +651,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#2-datasets" class="md-nav__link">
+  <a href="#2-why-uzbek-data-matters" class="md-nav__link">
     <span class="md-ellipsis">
       
-        2. Datasets
+        2. Why Uzbek Data Matters
       
     </span>
   </a>
@@ -664,10 +662,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#3-results" class="md-nav__link">
+  <a href="#3-classes-of-uzbek-data" class="md-nav__link">
     <span class="md-ellipsis">
       
-        3. Results
+        3. Classes of Uzbek Data
       
     </span>
   </a>
@@ -675,10 +673,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#4-observations" class="md-nav__link">
+  <a href="#4-eda-of-open-source-uzbek-datasets" class="md-nav__link">
     <span class="md-ellipsis">
       
-        4. Observations
+        4. EDA of Open-Source Uzbek Datasets
       
     </span>
   </a>
@@ -686,10 +684,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#5-limitations" class="md-nav__link">
+  <a href="#5-how-each-class-contributes-to-model-training" class="md-nav__link">
     <span class="md-ellipsis">
       
-        5. Limitations
+        5. How Each Class Contributes to Model Training
       
     </span>
   </a>
@@ -697,13 +695,251 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#6-conclusion" class="md-nav__link">
+  <a href="#6-key-findings-from-the-eda" class="md-nav__link">
     <span class="md-ellipsis">
       
-        6. Conclusion
+        6. Key Findings from the EDA
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-implications-for-future-uzbek-ai-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        7. Implications for Future Uzbek AI Development
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-translation-data-for-uzbek-english" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8. Translation Data for Uzbek ↔ English
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8. Translation Data for Uzbek ↔ English">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#81-what-translation-data-is" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.1 What Translation Data Is
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#82-types-of-translation-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.2 Types of Translation Data
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#83-overview-of-available-uzbek-translation-resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.3 Overview of Available Uzbek Translation Resources
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#84-how-these-datasets-are-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.4 How These Datasets Are Used
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="8.4 How These Datasets Are Used">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#a-for-traditional-machine-translation-nmt" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        a) For Traditional Machine Translation (NMT)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#b-for-multilingual-llms-and-instruction-fine-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        b) For Multilingual LLMs and Instruction Fine-Tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#c-for-alignment-and-multilingual-embeddings" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        c) For Alignment and Multilingual Embeddings
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#85-quality-and-coverage-challenges" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.5 Quality and Coverage Challenges
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#86-summary-of-translation-data-usefulness" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.6 Summary of Translation Data Usefulness
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#87-outlook" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        8.7 Outlook
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        9. Conclusion
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="9. Conclusion">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#references" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        References
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -736,12 +972,12 @@
                 
                   <div class="md-profile md-post__profile">
                     <span class="md-author md-author--long">
-                      <img src="https://avatars.githubusercontent.com/abdukarimovhm" alt="Abdukarimov Humoyunbek">
+                      <img src="https://avatars.githubusercontent.com/mirsaidl" alt="Mirsaid Abdurasulov">
                     </span>
                     <span class="md-profile__description">
                       <strong>
                         
-                          <a href="https://github.com/abdukarimovhm">Abdukarimov Humoyunbek</a>
+                          <a href="https://github.com/mirsaidl">Mirsaid Abdurasulov</a>
                         
                       </strong>
                       <br>
@@ -763,14 +999,14 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-11-23 15:00:00+09:00" class="md-ellipsis">Nov 23, 2025</time>
+                        <time datetime="2025-11-29 15:00:00+09:00" class="md-ellipsis">Nov 29, 2025</time>
                       </div>
                     </li>
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2025-11-23 15:50:00+09:00" class="md-ellipsis">Nov 23, 2025</time>
+                          <time datetime="2025-11-29 16:50:00+09:00" class="md-ellipsis">Nov 29, 2025</time>
                         </div>
                       </li>
                     
@@ -792,7 +1028,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -820,35 +1056,35 @@
       
       
       
-        <span class="md-tag">Benchmarking</span>
+        <span class="md-tag">Cross-lingual AI</span>
       
     
       
       
       
       
-        <span class="md-tag">CatBoost</span>
+        <span class="md-tag">Instruction Datasets</span>
       
     
       
       
       
       
-        <span class="md-tag">TabPFN</span>
+        <span class="md-tag">LLM Training</span>
       
     
       
       
       
       
-        <span class="md-tag">Tabular Data</span>
+        <span class="md-tag">Machine Translation</span>
       
     
       
       
       
       
-        <span class="md-tag">XGBoost</span>
+        <span class="md-tag">Uzbek NLP</span>
       
     
       
@@ -865,174 +1101,384 @@
   
 
 
-<h1 id="benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets">Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets</h1>
-<p>This study benchmarks CatBoost, XGBoost, and TabPFN across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.</p>
+<h1 id="the-state-of-uzbek-data-for-ai"><strong>The State of Uzbek Data for AI</strong></h1>
+<p><strong>A Comprehensive Overview of Open-Source Uzbek Datasets and Their Roles in LLM Development</strong></p>
+<h2 id="1-introduction"><strong>1. Introduction</strong></h2>
+<p>As artificial intelligence continues to reshape industries worldwide, language remains the foundation of intelligent systems. For Uzbekistan, the future of AI depends on the ability of models to understand, reason, and communicate in <strong>Uzbek</strong>—a rich language with a rapidly digitalizing presence but still limited representation in machine learning datasets.</p>
 <!-- more -->
 
-<h2 id="1-objective">1. Objective</h2>
-<p>The objective of this study is to benchmark the performance of three models — <strong>CatBoost</strong>,
-<strong>XGBoost</strong>, and <strong>TabPFN</strong> — across multiple Kaggle datasets. The aim is to evaluate how these
-models perform on diverse tasks including binary classification, regression, and time series
-forecasting. The focus is on comparing predictive accuracy, error metrics, and general
-applicability of TabPFN (a transformer-based model designed for tabular data) against
-well-established gradient boosting models.</p>
+<p>While English, Chinese, and other models benefit from vast open corpora, Uzbek data remains <strong>fragmented and under-structured</strong>. This article provides a detailed exploration of available Uzbek datasets, classifies them by type, and explains how each class contributes to building modern large language models (LLMs) and NLP models. It also presents an <strong>exploratory data analysis (EDA)</strong> of open-source Uzbek data to identify what exists today and what is still missing for true Uzbek AI capability.</p>
+<h2 id="2-why-uzbek-data-matters"><strong>2. Why Uzbek Data Matters</strong></h2>
+<p>Training a large language model is not only about collecting words - it is about teaching <strong>language comprehension, task understanding, and reasoning</strong>. Each category of dataset serves a distinct function in that process:</p>
 <ul>
-<li><strong>Note:</strong> For comparison purposes, we did not perform feature engineering, missing
-  value handling, or extensive data cleaning. All models were trained on the raw
-  datasets to observe their out-of-the-box capabilities.</li>
+<li><strong>Raw text corpora</strong> teaches grammar, structure, and contextual flow.  </li>
+<li><strong>Instruction datasets</strong> teach models to follow human directions and respond appropriately.  </li>
+<li><strong>Chain-of-Thought (CoT) data</strong> develop step-by-step reasoning and explainable logic.  </li>
+<li><strong>Annotated datasets</strong> train and evaluate specific skills such as classification or information extraction.  </li>
+<li><strong>Evaluation datasets</strong> are used to <strong>measure performance</strong> across language understanding, reasoning, and instruction-following tasks. They provide standardized benchmarks for comparing LLMs.</li>
 </ul>
-<hr />
-<h2 id="2-datasets">2. Datasets</h2>
-<p>The experiments were conducted on four Kaggle datasets covering different predictive modeling
-tasks. A summary of each dataset is provided below:</p>
+<p>Understanding how much data exists in each category helps organizations and researchers design the next generation of Uzbek-capable AI systems.</p>
+<h2 id="3-classes-of-uzbek-data"><strong>3. Classes of Uzbek Data</strong></h2>
+<p>Based on an examination of open repositories such as Hugging Face, Mendeley Data, and academic corpora, Uzbek data can be grouped into <strong>four principal classes</strong>:</p>
 <table>
 <thead>
 <tr>
-<th>Dataset Name</th>
-<th>Task Type</th>
-<th>Target Variable</th>
-<th>Number of Samples</th>
-<th>Number of Features</th>
-<th>Notes</th>
+<th>Class</th>
+<th>Description</th>
+<th>Representative Datasets</th>
+<th>Primary Use in Model Training</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Titanic - Machine Learning from Disaster</strong></td>
-<td>Binary Classification</td>
-<td>Survived (0/1)</td>
-<td>891 (train set)</td>
-<td>11 (after cleaning)</td>
-<td>Predict passenger survival</td>
+<td><strong>Raw Text Corpora</strong></td>
+<td>Unstructured collections of text (books, news, and web pages).</td>
+<td><a href="https://huggingface.co/datasets/tahrirchi/uz-crawl"><em>Tahrirchi/uz-crawl</em></a>, <a href="https://huggingface.co/datasets/murodbek/uz-books"><em>murodbek/uz-books</em></a></td>
+<td>Pretraining: builds fundamental Uzbek grammar, syntax, and style.</td>
 </tr>
 <tr>
-<td><strong>House Prices - Advanced Regression Techniques</strong></td>
-<td>Regression</td>
-<td>SalePrice</td>
-<td>1,460</td>
-<td>79</td>
-<td>Predict house sale prices</td>
+<td><strong>Instruction Datasets</strong></td>
+<td>Prompt-response examples showing how to follow user instructions.</td>
+<td><a href="https://huggingface.co/datasets/UAzimov/uzbek-instruct-llm"><em>UAzimov/uzbek-instruct-llm</em></a>, <a href="https://huggingface.co/datasets/behbudiy/alpaca-cleaned-uz"><em>Behbudiy/alpaca-cleaned-uz</em></a>, <a href="https://huggingface.co/datasets/behbudiy/translation-instruction"><em>Behbudiy/translation-instruction</em></a></td>
+<td>Supervised fine-tuning: teaches task execution and conversational behavior.</td>
 </tr>
 <tr>
-<td><strong>Binary Prediction with a Rainfall Dataset</strong></td>
-<td>Binary Classification</td>
-<td>RainTomorrow (Yes/No)</td>
-<td>2,190</td>
-<td>12</td>
-<td>Predict if it will rain tomorrow</td>
+<td><strong>Chain-of-Thought (CoT) Data</strong></td>
+<td>Multi-step reasoning traces showing how conclusions are reached.</td>
+<td><em>(No publicly available Uzbek dataset yet)</em></td>
+<td>Reasoning fine-tuning: trains logical, interpretable problem solving.</td>
 </tr>
 <tr>
-<td><strong>Forecasting Sticker Sales</strong></td>
-<td>Time Series Forecasting</td>
-<td>num_sold</td>
-<td>230,130</td>
-<td>5 (date, country, store, product, id)</td>
-<td>Predict sticker sales; missing values present in num_sold</td>
+<td><strong>Annotated / Task-Specific Data</strong></td>
+<td>Labeled datasets for NLP tasks (e.g., sentiment, NER, semantic similarity).</td>
+<td><a href="https://huggingface.co/datasets/behbudiy/uzbek-sentiment-analysis"><em>Behbudiy/uzbek-sentiment-analysis</em></a> <a href="https://data.mendeley.com/datasets/xf7pyvhb2v/1"><em>NER for Uzbek (Mendeley)</em></a></td>
+<td>Evaluation and specialization: supports classification, labeling, or entity recognition.</td>
+</tr>
+<tr>
+<td><strong>Evaluation datasets</strong></td>
+<td>Benchmarks used to measure model performance in language understanding, reasoning, and instruction following</td>
+<td><em><a href="https://huggingface.co/datasets/tahrirchi/uzlib">Tahrirchi/uzlib</a>, <a href="https://github.com/UlugbekSalaev/SimRelUz">SimReIUz</a></em></td>
+<td><em>Performance assessment</em> — evaluates comprehension, factual accuracy, fluency, across diverse Uzbek language tasks.</td>
 </tr>
 </tbody>
 </table>
-<h2 id="3-results">3. Results</h2>
-<p>The models were evaluated based on metrics appropriate to each task. For the <strong>House Prices</strong>
-dataset, RMSLE (Root Mean Squared Log Error) was used in accordance with Kaggle’s official
-evaluation method</p>
-<ul>
-<li><strong>Note:</strong> Due to TabPFN’s limitation of handling a maximum of 10,000 rows, for large
-  datasets (Sticker Sales), we performed random sampling of 10,000 entries and
-  further split them into training and validation sets. CatBoost and XGBoost were also
-  trained on the same sampled data to ensure a fair comparison.</li>
-</ul>
+<h2 id="4-eda-of-open-source-uzbek-datasets"><strong>4. EDA of Open-Source Uzbek Datasets</strong></h2>
+<p>In linguistic coverage, Uzbek data is sufficient for language modeling: large corpora-like <em>uz-crawl</em> and <em>uz-books</em> ensure grammatical and lexical diversity. However, in <strong>reasoning and structured task learning</strong>, the resources are minimal. Models trained purely on existing data can <em>speak Uzbek</em> but cannot <em>reason in Uzbek</em>—they lack exposure to instructional patterns, logic sequences, and structured decision-making examples.</p>
 <table>
 <thead>
 <tr>
 <th>Dataset Name</th>
-<th>Metric</th>
-<th>CatBoost</th>
-<th>XGBoost</th>
-<th>TabPFN</th>
-<th>Notes</th>
+<th>Estimated Total Volume / Rows</th>
+<th>Description &amp; Limitation</th>
+<th>How it was Collected / Source</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td><strong>Titanic - Machine Learning from Disaster</strong></td>
-<td>Accuracy</td>
-<td>0.77511</td>
-<td>0.73584</td>
-<td>0.78947</td>
-<td></td>
+<td><strong>murodbek / uz-books</strong></td>
+<td>≈ 49.93 GB text (≈ 40 000 books)</td>
+<td>Large literary &amp; academic corpus in both Latin and Cyrillic Uzbek. Excellent for pre-training language fluency and style.</td>
+<td>Digitized public-domain Uzbek books from online libraries; cleaned and de-duplicated to plain text. (<a href="https://huggingface.co/datasets/murodbek/uz-books">Hugging Face</a>)</td>
 </tr>
 <tr>
-<td><strong>House Prices - Advanced Regression Techniques</strong></td>
-<td>RMSLE (Root Mean Squared Log Error)</td>
-<td>0.1283</td>
-<td>0.15554</td>
-<td>0.11359</td>
-<td>Evaluated on log(predictions)vslog(actual) as per Kaggle</td>
+<td><strong>tahrirchi / uz-crawl</strong></td>
+<td>≈ 3.41 GB (raw) → ≈ 1.7 GB processed / ≈ 30 M sentences</td>
+<td>Web-crawled Uzbek text (news, blogs, forums). Broad topical diversity but some noise and spelling variation.</td>
+<td>Automatically crawled and language-filtered; HTML tags removed and duplicates dropped. (<a href="https://huggingface.co/datasets/tahrirchi/uz-crawl">Hugging Face</a>)</td>
 </tr>
 <tr>
-<td><strong>Binary Prediction with a Rainfall Dataset</strong></td>
-<td>AUC ROC</td>
-<td>0.84231</td>
-<td>0.8458</td>
-<td>0.86564</td>
-<td></td>
+<td><strong>UAzimov / uzbek-instruct-llm</strong></td>
+<td>≈ 12.6 MB / ≈ 15 000 prompt–response pairs</td>
+<td>General instruction dataset (Q\&amp;A / task-following). Good for initial supervised fine-tuning; lacks domain-specific reasoning.</td>
+<td>Crowdsourced and translated from English (Alpaca / ShareGPT) prompts; manually cleaned. (<a href="https://huggingface.co/datasets/UAzimov/uzbek-instruct-llm">Hugging Face</a>)</td>
 </tr>
 <tr>
-<td><strong>Forecasting Sticker Sales</strong></td>
-<td>RMSE</td>
-<td>102.08</td>
-<td>89.56</td>
-<td>99.24</td>
-<td>All models were trained on a sampled dataset of 10,000 entries.</td>
+<td><strong>Behbudiy / alpaca-cleaned-uz</strong></td>
+<td>≈ 25.1 MB / ≈ 51 760 rows</td>
+<td>High-quality Uzbek translation of Stanford Alpaca. Enables general instruction-following. Still general-purpose, not legal or analytical.</td>
+<td>Machine-translated and human-post-edited by Behbudiy Lab from the English Alpaca set. (<a href="https://huggingface.co/datasets/behbudiy/alpaca-cleaned-uz">Hugging Face</a>)</td>
+</tr>
+<tr>
+<td><strong>Behbudiy / translation-instruction</strong></td>
+<td>≈ 13.8 MB / ≈ 20 000 examples</td>
+<td>Instruction-style parallel data (English ↔ Uzbek). Useful for bilingual fine-tuning; limited to translation tasks.</td>
+<td>Derived from existing parallel corpora reframed as “Translate this sentence into X” prompts. (<a href="https://huggingface.co/datasets/behbudiy/translation-instruction">Hugging Face</a>)</td>
+</tr>
+<tr>
+<td><strong>Behbudiy / uzbek-sentiment-analysis</strong></td>
+<td>≈ 10 MB / ≈ 10 000 labeled samples</td>
+<td>Supervised sentiment dataset (positive / negative / neutral). Good for evaluation but not for reasoning.</td>
+<td>Manually labeled reviews and social-media texts from Uzbek online sources. (<a href="https://huggingface.co/datasets/behbudiy/uzbek-sentiment-analysis">Hugging Face</a>)</td>
+</tr>
+<tr>
+<td><strong>UzABSA (Sanatbek / aspect-based-sentiment-analysis-uzbek)</strong></td>
+<td>≈ 3 500 reviews / ≈ 6 100 sentences ( ~ 3–5 MB )</td>
+<td>Aspect-based sentiment dataset for fine-grained opinion mining (restaurant domain). Useful for NLP benchmarking but small scale.</td>
+<td>Collected from Uzbek restaurant reviews; manually annotated for aspect terms and polarities. (<a href="https://aclanthology.org/2024.sigul-1.47">ACL Anthology 2024</a>)</td>
+</tr>
+<tr>
+<td><strong>SimRelUz (Semantic Relatedness)</strong></td>
+<td>≈ 1 MB / 1 418 word pairs</td>
+<td>Semantic similarity and relatedness ratings for Uzbek word pairs. Too small for training but valuable for embedding evaluation.</td>
+<td>Word pairs rated (1–5 scale) by 11 native Uzbek speakers for similarity and relatedness. (<a href="https://arxiv.org/abs/2205.06072">arXiv 2205.06072</a>)</td>
 </tr>
 </tbody>
 </table>
-<h2 id="4-observations">4. Observations</h2>
+<h2 id="5-how-each-class-contributes-to-model-training"><strong>5. How Each Class Contributes to Model Training</strong></h2>
+<table>
+<thead>
+<tr>
+<th>Model Stage</th>
+<th>Data Type</th>
+<th>Objective</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Pretraining</strong></td>
+<td>Raw text corpora</td>
+<td>Establish Uzbek language understanding—grammar, morphology, sentence formation.</td>
+</tr>
+<tr>
+<td><strong>Supervised Fine-Tuning</strong></td>
+<td>Instruction datasets</td>
+<td>Teach the model to interpret user intent and deliver structured responses.</td>
+</tr>
+<tr>
+<td><strong>Reasoning Fine-Tuning</strong></td>
+<td>CoT datasets</td>
+<td>Enable step-by-step legal, mathematical, or procedural reasoning.</td>
+</tr>
+<tr>
+<td><strong>Evaluation &amp; Domain Adaptation</strong></td>
+<td>Annotated datasets</td>
+<td>Benchmark and refine task-specific accuracy (e.g., sentiment, entities, classification).</td>
+</tr>
+</tbody>
+</table>
+<p>Without instruction and CoT data, a model trained solely on text will appear fluent yet behave superficially—unable to follow directives, justify decisions, or apply rules.</p>
+<h2 id="6-key-findings-from-the-eda"><strong>6. Key Findings from the EDA</strong></h2>
+<ol>
+<li><strong>The Uzbek data ecosystem is text-rich but behavior-poor.</strong><br />
+   Most datasets contain free text rather than supervised interactions or reasoning traces.  </li>
+<li><strong>Instructional data is emerging but not domain-aligned.</strong><br />
+   Current examples are general rather than specialized (e.g., law, education, healthcare).  </li>
+<li><strong>Reasoning (CoT) data remains the largest gap.</strong><br />
+   No open Uzbek dataset provides reasoning or explanation examples—limiting higher-order understanding.  </li>
+<li><strong>Annotated datasets serve auxiliary purposes.</strong><br />
+   They are useful for evaluation but cannot teach complex cognitive behavior.</li>
+</ol>
+<h2 id="7-implications-for-future-uzbek-ai-development"><strong>7. Implications for Future Uzbek AI Development</strong></h2>
+<p>The current landscape demonstrates that Uzbekistan has made progress in <strong>linguistic data availability</strong>, but still lacks <strong>reasoning-oriented, instruction-rich corpora</strong>.</p>
+<p>To advance national AI research and productization:</p>
 <ul>
-<li><strong>Titanic Dataset:</strong> TabPFN slightly outperformed CatBoost and XGBoost in terms of
-  accuracy, showing good performance on smaller classification tasks without feature
-  engineering.</li>
-<li><strong>House Prices:</strong> TabPFN achieved the lowest RMSLE, indicating strong generalization
-  ability for regression problems with log-transformed targets, even when trained on raw
-  data.</li>
-<li><strong>Rainfall Dataset:</strong> TabPFN achieved the highest AUC ROC, outperforming both boosting
-  models despite no additional data preprocessing or feature engineering.</li>
-<li><strong>Sticker Sales:</strong> XGBoost showed the best performance on time series forecasting.
-  TabPFN performed reasonably well, but its performance lagged</li>
+<li><strong>Develop domain-specific instruction datasets</strong> (e.g., legal Q\&amp;A, civic information, educational tutoring).  </li>
+<li><strong>Create Chain-of-Thought datasets</strong> in Uzbek that show intermediate reasoning steps and explanations.  </li>
+<li><strong>Establish standardized benchmarks</strong> to measure understanding, reasoning, and factual correctness in Uzbek.  </li>
+<li><strong>Encourage open collaboration</strong> between universities, AI labs, and government agencies to share curated, structured data.</li>
 </ul>
-<hr />
-<h2 id="5-limitations">5. Limitations</h2>
-<p>During this benchmarking study, the following limitations were encountered:</p>
+<h2 id="8-translation-data-for-uzbek-english"><strong>8. Translation Data for Uzbek ↔ English</strong></h2>
+<h3 id="81-what-translation-data-is"><strong>8.1 What Translation Data Is</strong></h3>
+<p>Translation datasets are called <strong>parallel corpora</strong> — collections of sentence pairs (or paragraphs) in two or more languages that express the same meaning.</p>
+<p>Each record has the structure:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;source&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Men Toshkentda yashayman.&quot;</span><span class="p">,</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">  </span><span class="nt">&quot;target&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;I live in Tashkent.&quot;</span>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>They are used to <strong>train and evaluate neural machine translation (NMT) models</strong> such as MarianMT, M2M100, or NLLB (No Language Left Behind).</p>
+<p>In contrast to raw text corpora, which teaches language patterns, <strong>parallel data explicitly teach cross-lingual alignment</strong> — how a sentence in Uzbek corresponds semantically and syntactically to one in English (or another language).</p>
+<h3 id="82-types-of-translation-data"><strong>8.2 Types of Translation Data</strong></h3>
+<p>There are three main categories of translation datasets relevant to Uzbek:</p>
+<table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+<th>Example Datasets</th>
+<th>Use Cases</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Parallel Sentence Corpora</strong></td>
+<td>Sentence-level aligned pairs between Uzbek and other languages (English, Russian, Kazakh).</td>
+<td><em>OPUS Tatoeba</em>, <em>Tilde MODEL Corpus</em>, <em>Parallel Uzbek–Kazakh corpus (PMC)</em></td>
+<td>Training bilingual NMT models (e.g., English ↔ Uzbek).</td>
+</tr>
+<tr>
+<td><strong>Instructional Translation Datasets</strong></td>
+<td>Parallel text expressed as instruction–response format (translation as a task).</td>
+<td><em>Behbudiy/translation-instruction</em></td>
+<td>Fine-tuning general LLMs to perform translation via instruction tuning (“Translate this sentence into English”).</td>
+</tr>
+<tr>
+<td><strong>Multilingual General Corpora</strong></td>
+<td>Large web crawls or mixed datasets that include Uzbek among many other languages (often automatically aligned).</td>
+<td><em>NLLB (Meta)</em>, <em>OPUS GlobalVoices</em>, <em>CCAligned</em>, <em>WikiMatrix</em></td>
+<td>Building multilingual or massively multilingual translation systems.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="_1"></h3>
+<h3 id="_2"></h3>
+<h3 id="83-overview-of-available-uzbek-translation-resources"><strong>8.3 Overview of Available Uzbek Translation Resources</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Dataset</th>
+<th>Source</th>
+<th>Languages</th>
+<th>Description / Quality</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Behbudiy / translation-instruction</strong></td>
+<td>Hugging Face</td>
+<td>Uzbek ↔ English</td>
+<td>20k instruction-form translation pairs. Manually curated and cleaned. Useful for LLM instruction fine-tuning.</td>
+</tr>
+<tr>
+<td><strong>OPUS Tatoeba</strong></td>
+<td>University of Helsinki</td>
+<td>Uzbek ↔ English (and others)</td>
+<td>A multilingual collection of example sentences and translations. Small, clean, conversational.</td>
+</tr>
+<tr>
+<td><strong>WikiMatrix</strong></td>
+<td>Facebook AI</td>
+<td>Uzbek ↔ English</td>
+<td>Sentence-aligned Wikipedia texts. Medium quality; alignment sometimes noisy.</td>
+</tr>
+<tr>
+<td><strong>CCAligned / CCMatrix</strong></td>
+<td>Facebook AI</td>
+<td>Uzbek ↔ English</td>
+<td>Large-scale automatically aligned Common Crawl data. Very noisy, requires filtering.</td>
+</tr>
+<tr>
+<td><strong>NLLB Seed Data</strong></td>
+<td>Meta (No Language Left Behind project)</td>
+<td>Uzbek ↔ 200+ languages</td>
+<td>Used internally by Meta to train NLLB-200 models. Public evaluation set available; raw data not fully open.</td>
+</tr>
+<tr>
+<td><strong>Parallel Uzbek–Kazakh Corpus</strong></td>
+<td>Academic dataset (PMC 2024)</td>
+<td>Uzbek ↔ Kazakh</td>
+<td>Sentence-level alignment of administrative and news content; suitable for regional cross-lingual transfer.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="84-how-these-datasets-are-used"><strong>8.4 How These Datasets Are Used</strong></h3>
+<h4 id="a-for-traditional-machine-translation-nmt"><strong>a) For Traditional Machine Translation (NMT)</strong></h4>
+<p>Parallel Uzbek–English corpora are used to train or fine-tune models like:</p>
 <ul>
-<li><strong>TabPFN Row Limitations:</strong> TabPFN officially supports datasets with up to 10,000 rows.</li>
-<li><strong>Handling Large Datasets:</strong></li>
-<li>For the <strong>Sticker Sales dataset</strong> (230,130 samples), attempts to train on the full
-    dataset by ignoring the 10,000-row limit resulted in failures:<ul>
-<li>On GPU (3.8 GB VRAM), the training failed due to out-of-memory errors.</li>
-<li>On CPU, running TabPFN on the full dataset caused the kernel to crash.</li>
+<li><strong>MarianMT</strong>, <strong>mBART</strong>, <strong>NLLB</strong>, or <strong>M2M100</strong>  </li>
+<li>Objective: learn direct translation mapping via supervised sequence-to-sequence modeling.</li>
 </ul>
-</li>
-<li>Therefore, for <strong>Sticker Sales</strong>, we trained all models on a 10,000-entry random sample to
-ensure comparability.</li>
-</ul>
-<hr />
-<h2 id="6-conclusion">6. Conclusion</h2>
-<p>This benchmarking study demonstrates that <strong>TabPFN</strong>, trained on large-scale synthetic data and
-leveraging in-context learning, can outperform or match established models like CatBoost and
-XGBoost on small datasets with minimal preprocessing. Its ability to handle raw tabular data
-without requiring feature engineering makes it a powerful tool for quick experimentation and
-baseline modeling.</p>
-<p>However, significant limitations arise when working with larger datasets beyond 10,000 rows, as
-noted by the model’s creators. Attempts to run TabPFN on large datasets resulted in memory
-overloads and kernel crashes, making it impractical for large-scale training.</p>
-<p>In summary:</p>
+<h4 id="b-for-multilingual-llms-and-instruction-fine-tuning"><strong>b) For Multilingual LLMs and Instruction Fine-Tuning</strong></h4>
+<p>Translation pairs can also be reframed as <strong>instruction tasks</strong> to fine-tune multilingual LLMs.</p>
+<p>Example format:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;instruction&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Translate the following Uzbek sentence into English.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">  </span><span class="nt">&quot;input&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Bu qonun 2023-yil 15-iyulda qabul qilingan.&quot;</span><span class="p">,</span>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">  </span><span class="nt">&quot;output&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;This law was adopted on July 15, 2023.&quot;</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>This method doesn’t just teach the model bilingual equivalence — it also teaches <strong>how to perform translation on request</strong>, integrating translation into the model’s conversational behavior.</p>
+<h4 id="c-for-alignment-and-multilingual-embeddings"><strong>c) For Alignment and Multilingual Embeddings</strong></h4>
+<p>Some Uzbek–English corpora are used to train <strong>multilingual embedding models</strong> (like LaBSE, LASER3).<br />
+These models learn a <em>shared vector space</em> where semantically similar sentences in both languages have nearby representations.<br />
+This is essential for multilingual search, cross-lingual RAG systems, or translation memory tools.</p>
+<h3 id="85-quality-and-coverage-challenges"><strong>8.5 Quality and Coverage Challenges</strong></h3>
+<p>Despite progress, Uzbek translation datasets face several limitations:</p>
+<ol>
+<li><strong>Data Size</strong> — Most Uzbek↔English corpora are small (tens of thousands of pairs), compared to tens of millions for major languages.  </li>
+<li><strong>Domain Imbalance</strong> — Many pairs come from Wikipedia or news sources; there’s limited legal, technical, or colloquial data.  </li>
+<li><strong>Alignment Noise</strong> — Automatically aligned datasets (like CCAligned) contain significant mismatches due to inconsistent sentence segmentation.  </li>
+<li><strong>Script Variation</strong> — Uzbek appears in both Latin and Cyrillic scripts, complicating alignment and requiring preprocessing.  </li>
+<li><strong>Cultural and Legal Context Loss</strong> — Direct translations often omit context critical for Uzbek-specific meaning (e.g., legal or bureaucratic expressions).</li>
+</ol>
+<h3 id="_3"></h3>
+<h3 id="_4"></h3>
+<h3 id="_5"></h3>
+<h3 id="_6"></h3>
+<h3 id="86-summary-of-translation-data-usefulness"><strong>8.6 Summary of Translation Data Usefulness</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Model Goal</th>
+<th>Data Type Needed</th>
+<th>Example Dataset</th>
+<th>Why It Helps</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic bilingual translation</strong></td>
+<td>Parallel corpora</td>
+<td>OPUS Tatoeba, WikiMatrix</td>
+<td>Teaches direct mapping between Uzbek and English.</td>
+</tr>
+<tr>
+<td><strong>LLM instruction fine-tuning</strong></td>
+<td>Instruction-form translation pairs</td>
+<td>Behbudiy/translation-instruction</td>
+<td>Enables conversational translation tasks (“Translate this text…”).</td>
+</tr>
+<tr>
+<td><strong>Cross-lingual retrieval or RAG</strong></td>
+<td>Multilingual embeddings or alignment corpora</td>
+<td>LaBSE, NLLB evaluation data</td>
+<td>Allows combining Uzbek and English documents in one semantic space.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="87-outlook"><strong>8.7 Outlook</strong></h3>
+<p>To advance translation quality and integrate it with high-level reasoning (e.g., bilingual legal assistants), future projects should:</p>
 <ul>
-<li><strong>TabPFN is highly competitive or even superior on smaller datasets without preprocessing.</strong></li>
-<li><strong>It is not recommended for large datasets</strong> due to its scalability limitations and resource
-  consumption issues.</li>
-<li><strong>In domain-specific or structured time series forecasting tasks, models like XGBoost still outperform TabPFN.</strong></li>
-<li>Future improvements in scaling TabPFN and adapting it for specialized tasks could make
-  it a strong candidate for broader practical use.</li>
+<li>Expand <strong>professionally curated bilingual corpora</strong> with domain diversity (law, healthcare, government).  </li>
+<li>Add <strong>reasoning-style translation datasets</strong>, showing how to translate nuanced or context-heavy Uzbek expressions step-by-step.  </li>
+<li>Develop <strong>script normalization tools</strong> to handle Cyrillic↔Latin consistency.  </li>
+<li>Create <strong>translation benchmarks</strong> specific to Central Asian languages for fair evaluation (BLEU, COMET, ChrF++).</li>
+</ul>
+<p>With these improvements, Uzbek can move from being a “low-resource language” to a <strong>strategically multilingual language</strong> in global AI.</p>
+<h2 id="9-conclusion"><strong>9. Conclusion</strong></h2>
+<p>Uzbek-language AI development has entered a transformative stage.<br />
+In its early years, progress centered on <strong>text collection</strong> — web crawls, literary archives, and digitized books that gave language models their foundational linguistic understanding.<br />
+Today, the next frontier lies not in <em>more text</em>, but in <strong>structured and functional data</strong>: resources that teach models not only <em>how Uzbek sounds</em>, but <em>how Uzbek thought and reasoning operate</em>.</p>
+<p>Through this analysis, it is clear that:</p>
+<ul>
+<li><strong>Raw text corpora</strong> forms a solid linguistic base for pretraining.  </li>
+<li><strong>Instruction datasets</strong> (like <em>UAzimov/uzbek-instruct-llm</em> and <em>Behbudiy/alpaca-cleaned-uz</em>) provide the first step toward task-following behavior.  </li>
+<li><strong>Annotated datasets</strong> add evaluation capabilities for classification and named-entity recognition tasks.  </li>
+<li><strong>Chain-of-Thought data</strong>—the foundation of reasoning and interpretability—remains a critical missing piece.  </li>
+<li><strong>Translation datasets</strong> (e.g., <em>Behbudiy/translation-instruction</em>, <em>OPUS Tatoeba</em>, <em>WikiMatrix</em>) are becoming an essential bridge between Uzbek and global languages, enabling multilingual LLMs and cross-lingual retrieval systems.</li>
+</ul>
+<p>The strategic direction for the Uzbek AI community is now clear:</p>
+<ul>
+<li>Develop <strong>domain-specific instruction datasets</strong> (especially in law, healthcare, and education).  </li>
+<li>Create <strong>reasoning-rich Chain-of-Thought corpora</strong> that capture Uzbek analytical processes.  </li>
+<li>Expand <strong>translation and alignment data</strong> to ensure interoperability between Uzbek and other major languages.  </li>
+<li>Build <strong>national evaluation benchmarks</strong> that measure reasoning quality, factual accuracy, and multilingual performance.  </li>
+<li><strong>Establish Uzbek GLUE benchmark</strong> dataset (UzGLUE) to train LLMs in different tasks.</li>
+</ul>
+<p>By shifting focus from raw data collection to structured, high-quality, and explainable datasets, Uzbekistan can evolve from a <strong>low-resource language</strong> environment into a <strong>regional AI innovator</strong>—one that promotes ethical, transparent, and locally grounded artificial intelligence aligned with the country’s cultural and linguistic identity.</p>
+<h3 id="references"><strong>References</strong></h3>
+<ul>
+<li><a href="https://huggingface.co/datasets/UAzimov/uzbek-instruct-llm">UAzimov / uzbek-instruct-llm — Hugging Face</a>  </li>
+<li><a href="https://huggingface.co/datasets/behbudiy/alpaca-cleaned-uz">Behbudiy / alpaca-cleaned-uz — Hugging Face</a>  </li>
+<li><a href="https://huggingface.co/datasets/behbudiy/translation-instruction">Behbudiy / translation-instruction — Hugging Face</a>  </li>
+<li><a href="https://huggingface.co/datasets/behbudiy/uzbek-sentiment-analysis">Behbudiy / uzbek-sentiment-analysis — Hugging Face</a>  </li>
+<li><a href="https://huggingface.co/datasets/tahrirchi/uz-crawl">Tahrirchi / uz-crawl — Hugging Face</a>  </li>
+<li><a href="https://huggingface.co/datasets/tahrirchi/uz-books">Tahrirchi / uz-books — Hugging Face</a>  </li>
+<li><a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10904177/">Parallel Uzbek–Kazakh Corpus — PMC</a>  </li>
+<li><a href="https://arxiv.org/abs/2205.06072">SimRelUz — arXiv</a>  </li>
+<li><a href="https://data.mendeley.com/datasets/xf7pyvhb2v/1">NER for Uzbek — Mendeley Data</a>  </li>
+<li><a href="https://opus.nlpl.eu/Tatoeba.php">OPUS Tatoeba — University of Helsinki</a>  </li>
+<li><a href="https://huggingface.co/datasets/facebook/wikimatrix">WikiMatrix — Facebook AI</a></li>
 </ul>
 
 
@@ -1076,7 +1522,7 @@ overloads and kernel crashes, making it impractical for large-scale training.</p
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
           
-          <a href="../../13/choosing-the-right-camera-for-cv-application/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Choosing the Right Camera for CV Application">
+          <a href="../../23/benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets">
             <div class="md-footer__button md-icon">
               
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
@@ -1086,27 +1532,11 @@ overloads and kernel crashes, making it impractical for large-scale training.</p
                 Previous
               </span>
               <div class="md-ellipsis">
-                Choosing the Right Camera for CV Application
+                Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets
               </div>
             </div>
           </a>
         
-        
-          
-          <a href="../../29/the-state-of-uzbek-data-for-ai/" class="md-footer__link md-footer__link--next" aria-label="Next: The State of Uzbek Data for AI">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                The State of Uzbek Data for AI
-              </div>
-            </div>
-            <div class="md-footer__button md-icon">
-              
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
-            </div>
-          </a>
         
       </nav>
     
