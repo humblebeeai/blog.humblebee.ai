@@ -6,6 +6,18 @@ hide:
 
 # 📌 Release Notes
 
+## v0.2.1-251204 (2025-12-04)
+
+<!-- Release notes generated using configuration in .github/release.yml at v0.2.1-251204 -->
+
+## What's Changed
+### 💬 Other
+* Every instance of TabPFN has been correctly changed to TabPFN V2 in the benchmarking blog by @koyiljon-s in https://github.com/humblebeeai/blog.humblebee.ai/pull/13
+* TabPFN V2 instead of the original TabPFN by @BaratovSokhibjon in https://github.com/humblebeeai/blog.humblebee.ai/pull/14
+
+
+**Full Changelog**: https://github.com/humblebeeai/blog.humblebee.ai/compare/v0.2.0-251129...v0.2.1-251204
+
 ## v0.2.0-251129 (2025-11-29)
 
 <!-- Release notes generated using configuration in .github/release.yml at v0.2.0-251129 -->
