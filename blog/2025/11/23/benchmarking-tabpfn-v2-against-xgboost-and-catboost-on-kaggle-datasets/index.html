@@ -10,7 +10,7 @@
       
       
       
-        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/23/benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets/">
+        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/23/benchmarking-tabpfn-v2-against-xgboost-and-catboost-on-kaggle-datasets/">
       
       
         <link rel="prev" href="../../13/choosing-the-right-camera-for-cv-application/">
@@ -27,7 +27,7 @@
     
     
       
-        <title>Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets - Humblebee AI - Blog</title>
+        <title>Benchmarking TabPFN V2 against XGboost and Catboost on Kaggle datasets - Humblebee AI - Blog</title>
       
     
     
@@ -78,7 +78,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets" class="md-skip">
+        <a href="#benchmarking-tabpfn-v2-against-xgboost-and-catboost-on-kaggle-datasets" class="md-skip">
           Skip to content
         </a>
       
@@ -115,7 +115,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets
+              Benchmarking TabPFN V2 against XGboost and Catboost on Kaggle datasets
             
           </span>
         </div>
@@ -834,7 +834,7 @@
       
       
       
-        <span class="md-tag">TabPFN</span>
+        <span class="md-tag">TabPFN V2</span>
       
     
       
@@ -865,16 +865,17 @@
   
 
 
-<h1 id="benchmarking-tabpfn-against-xgboost-and-catboost-on-kaggle-datasets">Benchmarking TabPFN against XGboost and Catboost on Kaggle datasets</h1>
-<p>This study benchmarks CatBoost, XGBoost, and TabPFN across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.</p>
+<h1 id="benchmarking-tabpfn-v2-against-xgboost-and-catboost-on-kaggle-datasets">Benchmarking TabPFN V2 against XGboost and Catboost on Kaggle datasets</h1>
+<p>This study benchmarks CatBoost, XGBoost, and TabPFN V2 across multiple Kaggle datasets, including classification, regression, and time series tasks. TabPFN V2 showed strong performance on small datasets, often outperforming the boosting models without any feature engineering or preprocessing. However, it struggles with large datasets over 10,000 rows due to memory limitations, where XGBoost remains more effective, particularly for time series forecasting. Overall, TabPFN V2 is a powerful tool for quick experimentation on smaller tabular datasets but is less practical for large-scale applications.</p>
+<p><strong>Side note: TabPFN V2.5 has been released.</strong></p>
 <!-- more -->
 
 <h2 id="1-objective">1. Objective</h2>
 <p>The objective of this study is to benchmark the performance of three models — <strong>CatBoost</strong>,
-<strong>XGBoost</strong>, and <strong>TabPFN</strong> — across multiple Kaggle datasets. The aim is to evaluate how these
+<strong>XGBoost</strong>, and <strong>TabPFN V2</strong> — across multiple Kaggle datasets. The aim is to evaluate how these
 models perform on diverse tasks including binary classification, regression, and time series
 forecasting. The focus is on comparing predictive accuracy, error metrics, and general
-applicability of TabPFN (a transformer-based model designed for tabular data) against
+applicability of TabPFN V2 (a transformer-based model designed for tabular data) against
 well-established gradient boosting models.</p>
 <ul>
 <li><strong>Note:</strong> For comparison purposes, we did not perform feature engineering, missing
@@ -936,7 +937,7 @@ tasks. A summary of each dataset is provided below:</p>
 dataset, RMSLE (Root Mean Squared Log Error) was used in accordance with Kaggle’s official
 evaluation method</p>
 <ul>
-<li><strong>Note:</strong> Due to TabPFN’s limitation of handling a maximum of 10,000 rows, for large
+<li><strong>Note:</strong> Due to TabPFN V2’s limitation of handling a maximum of 10,000 rows, for large
   datasets (Sticker Sales), we performed random sampling of 10,000 entries and
   further split them into training and validation sets. CatBoost and XGBoost were also
   trained on the same sampled data to ensure a fair comparison.</li>
@@ -948,7 +949,7 @@ evaluation method</p>
 <th>Metric</th>
 <th>CatBoost</th>
 <th>XGBoost</th>
-<th>TabPFN</th>
+<th>TabPFN V2</th>
 <th>Notes</th>
 </tr>
 </thead>
@@ -989,27 +990,27 @@ evaluation method</p>
 </table>
 <h2 id="4-observations">4. Observations</h2>
 <ul>
-<li><strong>Titanic Dataset:</strong> TabPFN slightly outperformed CatBoost and XGBoost in terms of
+<li><strong>Titanic Dataset:</strong> TabPFN V2 slightly outperformed CatBoost and XGBoost in terms of
   accuracy, showing good performance on smaller classification tasks without feature
   engineering.</li>
-<li><strong>House Prices:</strong> TabPFN achieved the lowest RMSLE, indicating strong generalization
+<li><strong>House Prices:</strong> TabPFN V2 achieved the lowest RMSLE, indicating strong generalization
   ability for regression problems with log-transformed targets, even when trained on raw
   data.</li>
-<li><strong>Rainfall Dataset:</strong> TabPFN achieved the highest AUC ROC, outperforming both boosting
+<li><strong>Rainfall Dataset:</strong> TabPFN V2 achieved the highest AUC ROC, outperforming both boosting
   models despite no additional data preprocessing or feature engineering.</li>
 <li><strong>Sticker Sales:</strong> XGBoost showed the best performance on time series forecasting.
-  TabPFN performed reasonably well, but its performance lagged</li>
+  TabPFN V2 performed reasonably well, but its performance lagged</li>
 </ul>
 <hr />
 <h2 id="5-limitations">5. Limitations</h2>
 <p>During this benchmarking study, the following limitations were encountered:</p>
 <ul>
-<li><strong>TabPFN Row Limitations:</strong> TabPFN officially supports datasets with up to 10,000 rows.</li>
+<li><strong>TabPFN V2 Row Limitations:</strong> TabPFN V2 officially supports datasets with up to 10,000 rows.</li>
 <li><strong>Handling Large Datasets:</strong></li>
 <li>For the <strong>Sticker Sales dataset</strong> (230,130 samples), attempts to train on the full
     dataset by ignoring the 10,000-row limit resulted in failures:<ul>
 <li>On GPU (3.8 GB VRAM), the training failed due to out-of-memory errors.</li>
-<li>On CPU, running TabPFN on the full dataset caused the kernel to crash.</li>
+<li>On CPU, running TabPFN V2 on the full dataset caused the kernel to crash.</li>
 </ul>
 </li>
 <li>Therefore, for <strong>Sticker Sales</strong>, we trained all models on a 10,000-entry random sample to
@@ -1017,21 +1018,21 @@ ensure comparability.</li>
 </ul>
 <hr />
 <h2 id="6-conclusion">6. Conclusion</h2>
-<p>This benchmarking study demonstrates that <strong>TabPFN</strong>, trained on large-scale synthetic data and
+<p>This benchmarking study demonstrates that <strong>TabPFN V2</strong>, trained on large-scale synthetic data and
 leveraging in-context learning, can outperform or match established models like CatBoost and
 XGBoost on small datasets with minimal preprocessing. Its ability to handle raw tabular data
 without requiring feature engineering makes it a powerful tool for quick experimentation and
 baseline modeling.</p>
 <p>However, significant limitations arise when working with larger datasets beyond 10,000 rows, as
-noted by the model’s creators. Attempts to run TabPFN on large datasets resulted in memory
+noted by the model’s creators. Attempts to run TabPFN V2 on large datasets resulted in memory
 overloads and kernel crashes, making it impractical for large-scale training.</p>
 <p>In summary:</p>
 <ul>
-<li><strong>TabPFN is highly competitive or even superior on smaller datasets without preprocessing.</strong></li>
+<li><strong>TabPFN V2 is highly competitive or even superior on smaller datasets without preprocessing.</strong></li>
 <li><strong>It is not recommended for large datasets</strong> due to its scalability limitations and resource
   consumption issues.</li>
-<li><strong>In domain-specific or structured time series forecasting tasks, models like XGBoost still outperform TabPFN.</strong></li>
-<li>Future improvements in scaling TabPFN and adapting it for specialized tasks could make
+<li><strong>In domain-specific or structured time series forecasting tasks, models like XGBoost still outperform TabPFN V2.</strong></li>
+<li>Future improvements in scaling TabPFN V2 and adapting it for specialized tasks could make
   it a strong candidate for broader practical use.</li>
 </ul>
 
