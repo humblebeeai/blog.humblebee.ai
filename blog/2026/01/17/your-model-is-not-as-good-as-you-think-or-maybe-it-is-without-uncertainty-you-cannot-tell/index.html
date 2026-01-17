@@ -10,11 +10,11 @@
       
       
       
-        <link rel="canonical" href="https://blog.humblebee.ai/blog/2025/11/08/tailscale---one-tool-less-infrastructure/">
+        <link rel="canonical" href="https://blog.humblebee.ai/blog/2026/01/17/your-model-is-not-as-good-as-you-think-or-maybe-it-is-without-uncertainty-you-cannot-tell/">
       
       
+        <link rel="prev" href="../../../../2025/11/29/the-state-of-uzbek-data-for-ai/">
       
-        <link rel="next" href="../../12/livekit---one-platform-real-time-everything/">
       
       
         
@@ -25,7 +25,7 @@
     
     
       
-        <title>Tailscale - One Tool, Less Infrastructure - Humblebee AI - Blog</title>
+        <title>Your model is not as good as you think or maybe it is. Without uncertainty, you cannot tell. - Humblebee AI - Blog</title>
       
     
     
@@ -76,7 +76,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#tailscale-one-tool-less-infrastructure" class="md-skip">
+        <a href="#your-model-is-not-as-good-as-you-think-or-maybe-it-is-without-uncertainty-you-cannot-tell" class="md-skip">
           Skip to content
         </a>
       
@@ -113,7 +113,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Tailscale - One Tool, Less Infrastructure
+              Your model is not as good as you think or maybe it is. Without uncertainty, you cannot tell.
             
           </span>
         </div>
@@ -672,10 +672,10 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#what-is-tailscale" class="md-nav__link">
+  <a href="#why-we-evaluate-machine-learning-models-at-all" class="md-nav__link">
     <span class="md-ellipsis">
       
-        What Is Tailscale?
+        Why we evaluate machine learning models at all
       
     </span>
   </a>
@@ -683,10 +683,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#access-devices-by-name" class="md-nav__link">
+  <a href="#metrics-are-abstractions-not-truths" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Access Devices by Name
+        Metrics are abstractions, not truths
       
     </span>
   </a>
@@ -694,10 +694,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#share-local-services-publicly" class="md-nav__link">
+  <a href="#the-hidden-assumption-behind-point-metrics" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Share Local Services Publicly
+        The hidden assumption behind point metrics
       
     </span>
   </a>
@@ -705,10 +705,82 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#control-who-reaches-what" class="md-nav__link">
+  <a href="#where-single-metric-evaluation-fails-in-practice" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Control Who Reaches What
+        Where single metric evaluation fails in practice
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Where single metric evaluation fails in practice">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#small-or-medium-sized-test-sets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Small or medium sized test sets
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#imbalanced-problems" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Imbalanced problems
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#threshold-sensitivity" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Threshold sensitivity
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#model-selection-and-hyperparameter-tuning" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Model selection and hyperparameter tuning
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#subgroup-and-fairness-analysis" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Subgroup and fairness analysis
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#the-real-question-metrics-do-not-answer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        The real question metrics do not answer
       
     </span>
   </a>
@@ -716,10 +788,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#run-services-anywhere" class="md-nav__link">
+  <a href="#from-point-estimates-to-uncertainty-aware-evaluation" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Run Services Anywhere
+        From point estimates to uncertainty aware evaluation
       
     </span>
   </a>
@@ -727,10 +799,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#no-more-traditional-vpns" class="md-nav__link">
+  <a href="#why-confidence-intervals-matter-in-machine-learning" class="md-nav__link">
     <span class="md-ellipsis">
       
-        No More Traditional VPNs
+        Why confidence intervals matter in machine learning
       
     </span>
   </a>
@@ -738,10 +810,10 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#why-this-matters" class="md-nav__link">
+  <a href="#confidence-intervals-in-real-decision-making" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Why This Matters
+        Confidence intervals in real decision making
       
     </span>
   </a>
@@ -749,13 +821,102 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#get-started" class="md-nav__link">
+  <a href="#where-naive-confidence-interval-approaches-fail" class="md-nav__link">
     <span class="md-ellipsis">
       
-        Get Started
+        Where naive confidence interval approaches fail
       
     </span>
   </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introducing-infer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Introducing Infer
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Introducing Infer">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#what-makes-infer-different" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What makes Infer different
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#installation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Installation
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Installation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#from-pypi-recommended" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From PyPI (Recommended)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#from-source-development" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        From Source (Development)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getting-started" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Getting started
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conclusion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conclusion
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -788,16 +949,16 @@
                 
                   <div class="md-profile md-post__profile">
                     <span class="md-author md-author--long">
-                      <img src="https://avatars.githubusercontent.com/BaratovSokhibjon" alt="Baratov Sokhibjon">
+                      <img src="https://avatars.githubusercontent.com/ShohruhShokulov" alt="Shohruh Shokulov">
                     </span>
                     <span class="md-profile__description">
                       <strong>
                         
-                          <a href="https://github.com/BaratovSokhibjon">Baratov Sokhibjon</a>
+                          <a href="https://github.com/ShohruhShokulov">Shohruh Shokulov</a>
                         
                       </strong>
                       <br>
-                      Maintainer
+                      Contributor
                     </span>
                   </div>
                 
@@ -815,14 +976,14 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5z"/></svg>
-                        <time datetime="2025-11-08 15:00:00+09:00" class="md-ellipsis">Nov 8, 2025</time>
+                        <time datetime="2026-01-17 08:00:47+09:00" class="md-ellipsis">Jan 17, 2026</time>
                       </div>
                     </li>
                     
                       <li class="md-nav__item">
                         <div class="md-nav__link">
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15 13h1.5v2.82l2.44 1.41-.75 1.3L15 16.69zm4-5H5v11h4.67c-.43-.91-.67-1.93-.67-3a7 7 0 0 1 7-7c1.07 0 2.09.24 3 .67zM5 21a2 2 0 0 1-2-2V5c0-1.11.89-2 2-2h1V1h2v2h8V1h2v2h1a2 2 0 0 1 2 2v6.1c1.24 1.26 2 2.99 2 4.9a7 7 0 0 1-7 7c-1.91 0-3.64-.76-4.9-2zm11-9.85A4.85 4.85 0 0 0 11.15 16c0 2.68 2.17 4.85 4.85 4.85A4.85 4.85 0 0 0 20.85 16c0-2.68-2.17-4.85-4.85-4.85"/></svg>
-                          <time datetime="2025-11-08 15:50:00+09:00" class="md-ellipsis">Nov 8, 2025</time>
+                          <time datetime="2026-01-17 08:00:47+09:00" class="md-ellipsis">Jan 17, 2026</time>
                         </div>
                       </li>
                     
@@ -844,7 +1005,7 @@
                           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20a8 8 0 0 0 8-8 8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8m0-18a10 10 0 0 1 10 10 10 10 0 0 1-10 10C6.47 22 2 17.5 2 12A10 10 0 0 1 12 2m.5 5v5.25l4.5 2.67-.75 1.23L11 13V7z"/></svg>
                           <span class="md-ellipsis">
                             
-                              4 min read
+                              9 min read
                             
                           </span>
                         </div>
@@ -872,21 +1033,21 @@
       
       
       
-        <span class="md-tag">Network</span>
+        <span class="md-tag">Confidence Intervals</span>
       
     
       
       
       
       
-        <span class="md-tag">Tailscale</span>
+        <span class="md-tag">Evaluation Metrics</span>
       
     
       
       
       
       
-        <span class="md-tag">VPN</span>
+        <span class="md-tag">Machine Learning</span>
       
     
       
@@ -903,138 +1064,121 @@
   
 
 
-<h1 id="tailscale-one-tool-less-infrastructure">Tailscale - One Tool, Less Infrastructure</h1>
-<p>You have multiple devices like a laptop, a production server, maybe an edge server. Accessing your work devices from outside your network usually requires port forwarding, dynamic DNS services, or a VPN, this usually raises security concerns as setting those up requires your public IP to be exposed.</p>
-<p>Tailscale makes this simple. Install it on your devices and sign in. They can now reach each other securely from anywhere.</p>
+<h1 id="your-model-is-not-as-good-as-you-think-or-maybe-it-is-without-uncertainty-you-cannot-tell"><strong>Your model is not as good as you think or maybe it is. Without uncertainty, you cannot tell.</strong></h1>
+<p>Machine learning teams love clean numbers: <strong>accuracy of 92 percent</strong>. <strong>RMSE of 3.4</strong>, <strong>F1 score of 0.88</strong>. These numbers feel objective, precise, and reassuring. They fit neatly into dashboards, slide decks, and go or no-go decisions.</p>
 <!-- more -->
 
-<h2 id="what-is-tailscale">What Is Tailscale?</h2>
-<p>Tailscale creates a secure network between your devices. Your devices connect directly to each other (peer-to-peer), not through a central server. This means faster speeds and no single point of failure.</p>
-<p>Install it on your laptop and work server. Sign in with your Google account on both. Now you can <code>ssh servername</code> from a coffee shop and it connects like they're on the same local network.</p>
-<p>No port forwarding. No complex configs. No networking knowledge required.</p>
-<p>Beyond being a VPN that actually works, Tailscale replaces several tools: dynamic DNS for device names, ngrok for sharing localhost, and firewall rules for access control.</p>
-<h2 id="access-devices-by-name">Access Devices by Name</h2>
-<blockquote>
-<p><em>Replaces: Custom DNS servers, memorizing IPs, updating hosts files</em></p>
-</blockquote>
-<p>Setting up Pi-hole or bind9 just to give your devices readable names? Updating DNS records every time you add a machine? Memorizing <code>192.168.1.142</code> because you're too lazy to configure it properly?</p>
-<p>MagicDNS does this automatically:</p>
-<p><code>ssh servername</code></p>
-<p>Every device gets a name. No server to maintain, no records to update, no IPs to remember.</p>
-<p><img src="https://cdn.sanity.io/images/w77i7m8x/production/66e93349d3cace56c631298a917ae99a796c9887-1076x695.gif"/></p>
-<p>Type <code>http://nas</code> to reach your NAS. Type <code>ssh work-laptop</code> to reach your work machine. The names just work.</p>
-<hr />
-<h2 id="share-local-services-publicly">Share Local Services Publicly</h2>
-<blockquote>
-<p><em>Replaces: ngrok, localtunnel, port forwarding</em></p>
-</blockquote>
-<p>You know the drill with ngrok: random URLs that change every time you restart, rate limits on the free tier, paying $8/month if you want a stable subdomain.</p>
-<p>Tailscale Funnel:</p>
-<p><code>tailscale funnel 3000</code></p>
-<p>Your local dev server is now at <code>https://my-laptop.tailnet-name.ts.net</code>. Permanent URL. Free. No rate limits.</p>
-<p>Testing webhooks from Stripe? Demoing a feature to a client? Running a side project on your work server? One command handles it.</p>
-<p>If you want to share something with just your team (not the whole internet):</p>
-<p><code>tailscale serve 3000</code></p>
-<p>Same thing, but only people on your Tailscale network can access it.</p>
-<blockquote>
-<p>📚 <a href="https://tailscale.com/kb/1247/funnel-examples">Funnel examples</a> · <a href="https://tailscale.com/kb/1311/tailscale-funnel">Command reference</a></p>
-</blockquote>
-<hr />
-<h2 id="control-who-reaches-what">Control Who Reaches What</h2>
-<blockquote>
-<p><em>Replaces: Firewall rules, iptables configs, security groups</em></p>
-</blockquote>
-<p>SSHing into each server to configure iptables. Documenting which ports are open where. Breaking production because you fat-fingered a rule at 2 AM.</p>
-<p>Tailscale ACLs are just a JSON file:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="p">{</span>
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="w">  </span><span class="nt">&quot;grants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;contractor@email.com&quot;</span><span class="p">],</span>
-</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w">      </span><span class="nt">&quot;dst&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag:staging&quot;</span><span class="p">],</span>
-</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w">      </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;5432&quot;</span><span class="p">]</span>
-</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="p">}</span>
+<p><img alt="Evaluation Metrics" src="../../../../../assets/images/infer/evaluation_metrics.jpg" /></p>
+<p>But those values are not facts about the world. They are estimates derived from finite data, noisy labels, and a long chain of design choices such as sampling strategy, preprocessing, thresholds, and metric definitions. Treating a single number as definitive creates a <strong>false sense of certainty</strong>. That overconfidence often leads to poor decisions, unreliable deployments, missed regressions in minority groups, and wasted effort chasing noise during model selection.</p>
+<p>Before we talk about confidence intervals, we need to step back and talk about evaluation itself. Why do we evaluate models, what are metrics actually telling us, and where do they quietly fail.</p>
+<h2 id="why-we-evaluate-machine-learning-models-at-all"><strong>Why we evaluate machine learning models at all</strong></h2>
+<p>Model evaluation exists to inform decisions about whether and how a machine learning system should be used. Training a model produces parameters that optimize a loss function on observed data, but evaluation is the step that connects that optimization process to real world deployment, where mistakes have costs and performance expectations must be met.</p>
+<p>In practice, evaluation helps teams determine whether a model meets the requirements of its intended use. It provides evidence about how the model behaves on data it was not trained on, how well it aligns with domain specific goals, and whether it satisfies constraints related to reliability, safety, or regulation. Without evaluation, there is no principled way to decide whether a model is ready to be deployed or how it compares to alternative approaches.</p>
+<p>Evaluation also serves as a shared reference point across teams. It allows engineers, researchers, product managers, and stakeholders to reason about model behavior using a common framework, even if their priorities differ. In this sense, evaluation is not only a technical step but also an organizational tool that supports accountability and informed decision making throughout the lifecycle of a machine learning system.</p>
+<h2 id="metrics-are-abstractions-not-truths"><strong>Metrics are abstractions, not truths</strong></h2>
+<p>Evaluation metrics are simplified summaries of model behavior. Each metric captures one narrow notion of quality and ignores everything else.</p>
+<p>Consider accuracy in a customer churn model. If only 5 percent of customers churn, a model that predicts “no churn” for everyone achieves 95 percent accuracy while providing zero business value. The metric looks strong precisely because it ignores the asymmetric cost of errors and the rarity of the outcome the model is meant to detect.</p>
+<p>The same pattern appears across metrics. Accuracy assumes all errors have equal cost and that class distributions are stable. Precision and recall focus on different failure modes but ignore calibration and confidence. F1 score compresses competing objectives into a single value while hiding tradeoffs. Regression metrics like RMSE and MAE emphasize different error magnitudes and implicitly encode assumptions about loss functions.</p>
+<p>Choosing the right metric already requires domain understanding, cost modeling, and clarity about how predictions will be used. A fraud detection system, a medical diagnostic model, and a recommender system should not be evaluated the same way even if they use similar algorithms.</p>
+<h2 id="the-hidden-assumption-behind-point-metrics"><strong>The hidden assumption behind point metrics</strong></h2>
+<p>When metric values are reported, they are often treated as fixed properties of a model, similar to architectural details such as the number of parameters or layers. Saying that a model has 92 percent accuracy or an F1 score of 0.88 implicitly suggests that these numbers are stable characteristics that can be relied on as precise summaries of performance.</p>
+<p>In reality, every reported metric is an estimate that depends on a specific evaluation setup. The value reflects the particular test sample that was drawn, the labels that were collected and possibly contain noise, and the operational choices embedded in the evaluation process, including preprocessing steps, thresholds, and metric definitions. None of these factors are fixed in practice, and small changes in any of them can alter the resulting metric.</p>
+<p>If the same model were evaluated on a slightly different test set drawn from the same underlying data distribution, the reported metric would almost certainly change. Sometimes the change would be minor, but in other cases it could be large enough to alter conclusions about model quality or readiness for deployment. Treating a single point estimate as definitive therefore relies on an implicit assumption that this variability is negligible, an assumption that often does not hold in real machine learning systems.</p>
+<h2 id="where-single-metric-evaluation-fails-in-practice"><strong>Where single metric evaluation fails in practice</strong></h2>
+<p>The limitations of point metrics show up repeatedly across real world machine learning systems.</p>
+<h4 id="small-or-medium-sized-test-sets"><strong>Small or medium sized test sets</strong></h4>
+<p>When test sets are small, randomness dominates. On a test set of a few hundred samples, one or two additional errors can materially change reported performance. Teams routinely interpret these fluctuations as meaningful improvements or regressions when they are simply noise.</p>
+<h4 id="imbalanced-problems"><strong>Imbalanced problems</strong></h4>
+<p>In domains like fraud detection, medical diagnosis, or anomaly detection, the most important class is often the rare one. Metrics such as recall, precision, and F1 score can swing dramatically with small changes in class composition or labeling errors. A single point estimate can easily mask extreme instability in minority class performance.</p>
+<h4 id="threshold-sensitivity"><strong>Threshold sensitivity</strong></h4>
+<p>Many metrics depend on a chosen decision threshold. A model that looks strong at one threshold may look weak at another. Reporting a single number hides how sensitive the model is to operational choices that will inevitably change over time.</p>
+<h4 id="model-selection-and-hyperparameter-tuning"><strong>Model selection and hyperparameter tuning</strong></h4>
+<p>When dozens or hundreds of models are tried, the best looking metric is often the luckiest one. Selecting based on point estimates alone systematically favors noise. This is one of the most common sources of overestimated offline performance.</p>
+<h4 id="subgroup-and-fairness-analysis"><strong>Subgroup and fairness analysis</strong></h4>
+<p>Aggregate metrics can look stable while subgroup performance is wildly uncertain. Small sample sizes within demographic slices amplify variance. Without explicitly accounting for uncertainty, teams often miss fragile or unsafe behavior in exactly the groups that matter most.</p>
+<h2 id="the-real-question-metrics-do-not-answer"><strong>The real question metrics do not answer</strong></h2>
+<p>A single metric value answers a narrow and retrospective question: <em>what did the model score on this particular evaluation sample?</em> 
+That information is useful, but it is rarely sufficient for making real decisions.</p>
+<p>Most practical decisions depend on a forward looking question instead. <em>How much could this metric plausibly change if the data were slightly different, if labels contained noise, or if operating conditions shifted in production?</em> Without an answer to that question, teams cannot reliably judge whether an observed improvement is meaningful, whether a regression reflects real degradation, or whether a model is safe to deploy.</p>
+<p>This gap between reporting a number and understanding its stability is where many evaluation failures originate. Metrics summarize past performance, but decisions require an understanding of uncertainty. Confidence intervals exist precisely to bridge this gap, by turning point estimates into ranges that reflect how much trust we can place in them.</p>
+<h2 id="from-point-estimates-to-uncertainty-aware-evaluation"><strong>From point estimates to uncertainty aware evaluation</strong></h2>
+<p><strong>Confidence intervals</strong> transform evaluation from a static report into a probabilistic statement.</p>
+<p>Instead of saying the model has 92 percent accuracy, we say that the accuracy is likely to lie within a certain range given the data we observed. That range captures sampling variability, measurement noise, and sensitivity to evaluation choices.</p>
+<p>This shift changes how metrics are used. Metrics stop being treated as precise truths and start being treated as uncertain estimates. That single change has far reaching consequences for deployment decisions, monitoring, and model comparison.</p>
+<h2 id="why-confidence-intervals-matter-in-machine-learning"><strong>Why confidence intervals matter in machine learning</strong></h2>
+<p>A single metric value summarizes what a model achieved on a specific evaluation sample, but it does not indicate how stable or reliable that result is. In practice, most decisions depend not only on the reported number but also on how much that number could change under slightly different conditions.</p>
+<p>Confidence intervals address this by quantifying the range within which a metric is likely to fall, given the inherent variability of finite data, noisy labels, and evaluation design choices. This is not a purely statistical concern. The width and position of an interval directly affect real decisions about deployment, monitoring, and prioritization.</p>
+<p>By exposing best case and worst case scenarios, confidence intervals allow teams to translate abstract metrics into concrete business risk. They reduce the chance of selecting models that appear better only due to noise during hyperparameter tuning. They make it possible to distinguish expected metric fluctuation from genuine performance degradation after deployment. They also highlight instability in subgroups that aggregate metrics can hide, improving fairness analysis and regulatory confidence. Finally, confidence intervals improve communication by replacing overconfident point estimates with calibrated statements about what the data actually supports.</p>
+<h2 id="confidence-intervals-in-real-decision-making"><strong>Confidence intervals in real decision making</strong></h2>
+<p>Consider a healthcare model that reports 94 percent sensitivity on a test set. On its own, that number sounds strong.</p>
+<p>With a confidence interval, the picture changes. The sensitivity might plausibly lie between 87 percent and 98 percent. That lower bound may be unacceptable in a clinical setting where missed diagnoses carry serious consequences. Without the interval, that risk remains invisible.</p>
+<p>This logic is already standard in online experimentation. No serious A/B testing team would ship a change based on point estimates alone. Offline model evaluation is answering the same question: <em>is this difference real, or is it noise?</em></p>
+<p>Confidence intervals bring the same discipline to machine learning evaluation.</p>
+<h2 id="where-naive-confidence-interval-approaches-fail"><strong>Where naive confidence interval approaches fail</strong></h2>
+<p>Not all confidence intervals (CI) are created equal. Many common approaches break down in realistic ML settings.</p>
+<p>Metrics like accuracy and recall are not normally distributed in small samples. Bootstrapping can fail when data are highly imbalanced or correlated. Some metrics are discontinuous with respect to thresholds. Others depend on complex pipelines that violate independence assumptions.</p>
+<p>This is why confidence intervals need to be metric aware, data aware, and production ready. Treating CI computation as an afterthought often produces misleading results that are worse than no interval at all.</p>
+<h2 id="introducing-infer"><strong>Introducing Infer</strong></h2>
+<p><img alt="Infer Logo" src="../../../../../assets/images/infer/infer_black.png" /></p>
+<p><strong>Infer</strong> is a Python-based evaluation framework that turns point metrics into <strong>uncertainty-aware performance statements</strong>. Instead of returning a single score, Infer computes statistically appropriate confidence intervals, making model evaluation and comparison more reliable in real-world settings. </p>
+<h3 id="what-makes-infer-different"><strong>What makes Infer different</strong></h3>
+<p>Infer is built on a simple insight: <strong>metrics without uncertainty quantification create statistical and business risk</strong>.
+Naive bootstrapping or default statistical methods often break silently when datasets are small, imbalanced, or when metrics violate their assumptions. Infer abstracts this complexity away.</p>
+<ul>
+<li>
+<p><strong>Automatic CI-method selection</strong>:
+  Infer selects confidence-interval methods that match each metric’s statistical properties, handling edge cases such as small samples, class imbalance, and zero-division safely.</p>
+</li>
+<li>
+<p><strong>Metric-aware statistical assumptions</strong>:
+  Different metrics require different uncertainty models. Infer encodes these distinctions so practitioners do not need to reason about statistical validity metric by metric.</p>
+</li>
+<li>
+<p><strong>Consistent, unified APIs</strong>:
+  The same interface works across classification, regression, and detection tasks, reducing evaluation friction and error-prone custom code.</p>
+</li>
+<li>
+<p><strong>Reproducible evaluation outputs</strong>:
+  Structured results are designed for reports, dashboards, and stakeholder communication, not just ad-hoc experimentation.</p>
+</li>
+</ul>
+<h3 id="installation"><strong>Installation</strong></h3>
+<h4 id="from-pypi-recommended"><strong>From PyPI (Recommended)</strong></h4>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="n">pip</span> <span class="n">install</span> <span class="n">infer</span><span class="o">-</span><span class="n">ci</span>
 </span></code></pre></div>
-<p>This contractor can access your staging database (port 5432). Nothing else. When they're done, delete the line. No leftover rules hiding on some forgotten server.</p>
-<p>Team-based access:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="p">{</span>
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="w">  </span><span class="nt">&quot;grants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;group:sre&quot;</span><span class="p">],</span>
-</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w">      </span><span class="nt">&quot;dst&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tag:prod&quot;</span><span class="p">],</span>
-</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w">      </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;22&quot;</span><span class="p">]</span>
-</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w">  </span><span class="p">],</span>
-</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w">  </span><span class="nt">&quot;groups&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
-</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w">    </span><span class="nt">&quot;group:sre&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;alice@company.com&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bob@company.com&quot;</span><span class="p">]</span>
-</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w">  </span><span class="p">}</span>
-</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="p">}</span>
+<h4 id="from-source-development"><strong>From Source (Development)</strong></h4>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">humblebeeai</span><span class="o">/</span><span class="n">infer</span><span class="o">-</span><span class="n">ci</span><span class="o">.</span><span class="n">git</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="n">cd</span> <span class="n">infer</span><span class="o">-</span><span class="n">ci</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">e</span> <span class="s2">&quot;.[dev]&quot;</span>
 </span></code></pre></div>
-<p>Your SRE team can SSH into production. Everyone else can't. Alice leaves the company? Remove her email. Policy updates everywhere instantly.</p>
-<p>No more SSH key distribution across 50 servers. No more "wait, which subnet is staging?" No more firewall rules that you're afraid to touch because nobody remembers why they exist.</p>
-<blockquote>
-<p>📚 <a href="https://tailscale.com/kb/1192/acl-samples">ACL examples</a> · <a href="https://tailscale.com/kb/1458/grant-examples">Grant examples</a></p>
-</blockquote>
-<hr />
-<h2 id="run-services-anywhere">Run Services Anywhere</h2>
-<blockquote>
-<p><em>Replaces: Load balancers, DNS updates, hardcoded hostnames</em></p>
-</blockquote>
-<p>You're running a database on <code>db-server-01</code>. That hostname is hardcoded in your configs. Server dies, you spin up <code>db-server-02</code>, and now you're doing find-replace across your codebase at midnight.</p>
-<p>Or you set up HAProxy. Configure health checks. Set up DNS. Maintain yet another piece of infrastructure.</p>
-<p>Tailscale Services:</p>
-<p><code>tailscale serve --service=svc:postgres-main --tcp 5432 localhost:5432</code></p>
-<p>Your database is now at <code>postgres-main.corp.ts.net</code>. Server dies? Run the same command on a new machine. The DNS name stays the same. Your apps reconnect automatically.</p>
-<p>Multi-region example:</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># Primary (US)</span>
-</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>tailscale<span class="w"> </span>serve<span class="w"> </span>--service<span class="o">=</span>svc:db-primary<span class="w"> </span>--tcp<span class="w"> </span><span class="m">5432</span><span class="w"> </span>localhost:5432
-</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
-</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="c1"># Replica (EU)</span>
-</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>tailscale<span class="w"> </span>serve<span class="w"> </span>--service<span class="o">=</span>svc:db-replica<span class="w"> </span>--tcp<span class="w"> </span><span class="m">5432</span><span class="w"> </span>localhost:5432
+<h4 id="getting-started"><strong>Getting started</strong></h4>
+<div class="language-Python highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="c1"># All the possible imports:</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kn">from</span><span class="w"> </span><span class="nn">infer_ci</span><span class="w"> </span><span class="kn">import</span> <span class="n">MetricEvaluator</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="kn">from</span><span class="w"> </span><span class="nn">infer_ci</span><span class="w"> </span><span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">precision_score</span><span class="p">,</span> <span class="n">tpr_score</span><span class="p">,</span> <span class="n">f1_score</span>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kn">from</span><span class="w"> </span><span class="nn">infer_ci</span><span class="w"> </span><span class="kn">import</span> <span class="n">mae</span><span class="p">,</span> <span class="n">mse</span><span class="p">,</span> <span class="n">rmse</span><span class="p">,</span> <span class="n">r2_score</span><span class="p">,</span> <span class="n">iou</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="c1"># Classification example:</span>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">evaluator</span> <span class="o">=</span> <span class="n">MetricEvaluator</span><span class="p">()</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a>
+</span><span id="__span-2-9"><a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="n">accuracy</span><span class="p">,</span> <span class="n">ci</span> <span class="o">=</span> <span class="n">evaluator</span><span class="o">.</span><span class="n">evaluate</span><span class="p">(</span>
+</span><span id="__span-2-10"><a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a>    <span class="n">y_true</span><span class="o">=</span><span class="n">y_true</span><span class="p">,</span>
+</span><span id="__span-2-11"><a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a>    <span class="n">y_pred</span><span class="o">=</span><span class="n">y_pred</span><span class="p">,</span>
+</span><span id="__span-2-12"><a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a>    <span class="n">task</span><span class="o">=</span><span class="s1">&#39;classification&#39;</span><span class="p">,</span>
+</span><span id="__span-2-13"><a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a>    <span class="n">metric</span><span class="o">=</span><span class="s1">&#39;accuracy&#39;</span><span class="p">,</span>
+</span><span id="__span-2-14"><a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a>    <span class="n">method</span><span class="o">=</span><span class="s1">&#39;wilson&#39;</span>
+</span><span id="__span-2-15"><a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a>    <span class="c1"># plot=True  # Supported in Bootstrap methods</span>
+</span><span id="__span-2-16"><a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="p">)</span>
 </span></code></pre></div>
-<p>Apps write to <code>db-primary.corp.ts.net</code> and read from <code>db-replica.corp.ts.net</code>. Primary goes down? Promote the replica and re-advertise it as primary. No config changes needed anywhere.</p>
-<p>You can also control who accesses these services:</p>
-<div class="language-json highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="p">{</span>
-</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="w">  </span><span class="nt">&quot;grants&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="w">    </span><span class="p">{</span>
-</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">      </span><span class="nt">&quot;src&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;group:backend-team&quot;</span><span class="p">],</span>
-</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">      </span><span class="nt">&quot;dst&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;svc:postgres-main&quot;</span><span class="p">],</span>
-</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">      </span><span class="nt">&quot;ip&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;5432&quot;</span><span class="p">]</span>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="p">}</span>
-</span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="w">  </span><span class="p">]</span>
-</span><span id="__span-3-9"><a id="__codelineno-3-9" name="__codelineno-3-9" href="#__codelineno-3-9"></a><span class="p">}</span>
-</span></code></pre></div>
-<p>Backend team can reach the database. Frontend team gets blocked automatically.</p>
-<blockquote>
-<p>📚 <a href="https://tailscale.com/kb/1552/tailscale-services">Services docs</a> · <a href="https://tailscale.com/kb/1589/tailscale-services-configuration-file">Configuration guide</a></p>
-</blockquote>
-<hr />
-<h2 id="no-more-traditional-vpns">No More Traditional VPNs</h2>
-<p>Central VPN server that's a bottleneck and single point of failure. Slow speeds because everything routes through one location. Complex setup with certificates and subnet planning. "VPN is down" means everyone's locked out.</p>
-<p>Tailscale creates direct peer-to-peer connections. Your laptop talks directly to your server. No central bottleneck. Uses WireGuard encryption without the WireGuard complexity.</p>
-<p>Setup is install, sign in, done. Takes 2 minutes. Devices can still connect to each other even if Tailscale's coordination server has issues (it handles the initial introduction, then gets out of the way).</p>
-<hr />
-<h2 id="why-this-matters">Why This Matters</h2>
-<p>Networking tools usually force a choice: simple but insecure, or secure but complex. Port forwarding is easy but leaves your services exposed. VPNs are secure but a pain to set up and maintain.</p>
-<p>Tailscale doesn't make you choose. It's secure by default (WireGuard encryption, identity-based auth, ACL policies) and actually easier to use than other alternatives.</p>
-<p>You're replacing DNS servers, ngrok subscriptions, firewall configurations, VPN infrastructure, and SSH key management with one tool that takes 2 minutes to set up.</p>
-<hr />
-<h2 id="get-started">Get Started</h2>
-<p>Download from <a href="https://tailscale.com/download">tailscale.com/download</a>. Install on two devices. Sign in. They'll find each other automatically.</p>
-<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="c1"># See your devices</span>
-</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>tailscale<span class="w"> </span>status
-</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
-</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="c1"># SSH into another machine</span>
-</span><span id="__span-4-5"><a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>ssh<span class="w"> </span>machine-name
-</span><span id="__span-4-6"><a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>
-</span><span id="__span-4-7"><a id="__codelineno-4-7" name="__codelineno-4-7" href="#__codelineno-4-7"></a><span class="c1"># Share something publicly</span>
-</span><span id="__span-4-8"><a id="__codelineno-4-8" name="__codelineno-4-8" href="#__codelineno-4-8"></a>tailscale<span class="w"> </span>funnel<span class="w"> </span><span class="m">8080</span>
-</span><span id="__span-4-9"><a id="__codelineno-4-9" name="__codelineno-4-9" href="#__codelineno-4-9"></a>
-</span><span id="__span-4-10"><a id="__codelineno-4-10" name="__codelineno-4-10" href="#__codelineno-4-10"></a><span class="c1"># Share with just your team</span>
-</span><span id="__span-4-11"><a id="__codelineno-4-11" name="__codelineno-4-11" href="#__codelineno-4-11"></a>tailscale<span class="w"> </span>serve<span class="w"> </span><span class="m">8080</span>
-</span></code></pre></div>
-<p>Two minutes to set up. Zero maintenance required.</p>
+<p><strong>The result:</strong></p>
+<ul>
+<li>MAPE of 7.88%</li>
+<li>95% confidence interval of [6.47%, 9.84%]</li>
+<li>Corresponding accuracy interpretation of 92.12% with a well-defined uncertainty range</li>
+</ul>
+<p>This gives far more insight than a single error number. It tells you not just how well the model performed, but how stable that performance is under resampling and noise.</p>
+<h3 id="conclusion"><strong>Conclusion</strong></h3>
+<p>Machine learning evaluation is ultimately about decision making under uncertainty, yet most evaluation practices pretend that uncertainty does not exist. Point metrics give the illusion of precision while hiding the variability that determines whether a model improvement is real, reproducible, and safe to deploy. Confidence intervals restore that missing context by turning metrics into statements about reliability, risk, and stability rather than isolated numbers. Infer operationalizes this shift, making uncertainty-aware evaluation practical, consistent, and statistically sound across real-world ML workflows. In an era where models increasingly influence high-stakes decisions, treating uncertainty as optional is no longer defensible and Infer makes it unavoidable, measurable, and actionable.</p>
+<p><a href="https://pypi.org/project/infer-ci/">Infer</a></p>
 
 
 
@@ -1076,22 +1220,22 @@
       
       <nav class="md-footer__inner md-grid" aria-label="Footer" >
         
-        
           
-          <a href="../../12/livekit---one-platform-real-time-everything/" class="md-footer__link md-footer__link--next" aria-label="Next: LiveKit - One Platform, Real-Time Everything">
-            <div class="md-footer__title">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              <div class="md-ellipsis">
-                LiveKit - One Platform, Real-Time Everything
-              </div>
-            </div>
+          <a href="../../../../2025/11/29/the-state-of-uzbek-data-for-ai/" class="md-footer__link md-footer__link--prev" aria-label="Previous: The State of Uzbek Data for AI">
             <div class="md-footer__button md-icon">
               
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"/></svg>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                The State of Uzbek Data for AI
+              </div>
             </div>
           </a>
+        
         
       </nav>
     
