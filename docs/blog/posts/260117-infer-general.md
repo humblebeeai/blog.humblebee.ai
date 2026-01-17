@@ -143,19 +143,19 @@ Naive bootstrapping or default statistical methods often break silently when dat
 
 
 ### **Installation**
-#### From PyPI (Recommended)
+#### **From PyPI (Recommended)**
 ```Python
 pip install infer-ci
 ```
 
-### From Source (Development)
+#### **From Source (Development)**
 ```Python
 git clone https://github.com/humblebeeai/infer-ci.git
 cd infer-ci
 pip install -e ".[dev]"
 ```
 
-### Getting started
+#### **Getting started**
 ```Python
 # All the possible imports:
 from infer_ci import MetricEvaluator
